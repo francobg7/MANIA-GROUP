@@ -98,7 +98,7 @@ export const products: Product[] = [
     id: "cel-11",
     name: "IPHONE 17 PRO MAX 512GB BLUE",
     price: 1695,
-    image: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&q=80",
+    image: "/images/iphone/17-blue.jpg",
     description: "iPhone 17 Pro Max, 512GB, color Blue",
     category: "celulares",
     brand: "Apple",
