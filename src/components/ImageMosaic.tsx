@@ -3,42 +3,42 @@ const images = [
     src: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=80',
     title: 'iPhone 15 Pro Max',
     description: 'El smartphone más avanzado con titanio natural y chip A17 Pro',
-    price: '$1,299,000',
+    price: 'U$ 12.990,00',
     category: 'Celulares'
   },
   {
     src: 'https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=800&q=80',
     title: 'AirPods Pro 2',
     description: 'Cancelación de ruido adaptativa con USB-C',
-    price: '$249,000',
+    price: 'U$ 2.490,00',
     category: 'Audio'
   },
   {
     src: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80',
     title: 'Dior Sauvage',
     description: 'Fragancia fresca y especiada para el hombre moderno',
-    price: '$145,000',
+    price: 'U$ 1.450,00',
     category: 'Perfumes'
   },
   {
     src: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800&q=80',
     title: 'Samsung Galaxy S24 Ultra',
     description: 'IA integrada y cámara profesional de 200MP',
-    price: '$1,199,000',
+    price: 'U$ 11.990,00',
     category: 'Celulares'
   },
   {
     src: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&q=80',
     title: 'YSL Y Eau de Parfum',
     description: 'Fragancia intensa y fresca para ocasiones especiales',
-    price: '$139,000',
+    price: 'U$ 1.390,00',
     category: 'Perfumes'
   },
   {
     src: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&q=80',
     title: 'Sony WF-1000XM5',
     description: 'Los mejores auriculares con cancelación de ruido',
-    price: '$299,000',
+    price: 'U$ 2.990,00',
     category: 'Audio'
   },
 ];
