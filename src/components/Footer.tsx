@@ -39,7 +39,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <h3 className="text-3xl font-extrabold tracking-wide mb-2">MANIA GROUP</h3>
+            <div className="mb-3">
+              <img
+                src="/images/logos/logo-blanco.png"
+                alt="MANIA GROUP"
+                className="h-24 md:h-28 w-auto"
+              />
+            </div>
             <p className="text-primary-foreground/80 text-sm max-w-sm">
               Loja especializada em Eletrônicos, Celulares e Equipamentos de Som e Imagem.
             </p>
