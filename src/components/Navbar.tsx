@@ -38,8 +38,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="text-xl font-bold tracking-wider hover:opacity-80 smooth-transition">
-            MANIA GROUP
+          <Link to="/" className="flex items-center hover:opacity-80 smooth-transition">
+            <img 
+              src="/images/logos/logo-nobackground.png" 
+              alt="MANIA GROUP" 
+              className="h-44 w-auto"
+            />
           </Link>
 
           {/* Search Bar */}
