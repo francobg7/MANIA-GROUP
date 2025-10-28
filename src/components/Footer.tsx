@@ -43,7 +43,7 @@ const Footer = () => {
               <img
                 src="/images/logos/logo-blanco.png"
                 alt="MANIA GROUP"
-                className="h-24 md:h-28 w-auto"
+                className="h-28 md:h-40 w-auto"
               />
             </div>
             <p className="text-primary-foreground/80 text-sm max-w-sm">
