@@ -1,28 +1,29 @@
 const brands = [
-  { name: 'Apple', logo: '🍎' },
-  { name: 'Samsung', logo: '📱' },
-  { name: 'Sony', logo: '🎧' },
-  { name: 'Xiaomi', logo: '✨' },
-  { name: 'Google', logo: '🔍' },
-  { name: 'JBL', logo: '🔊' },
-  { name: 'Beats', logo: '🎵' },
-  { name: 'Chanel', logo: '💎' },
-  { name: 'Dior', logo: '🌟' },
-  { name: 'Versace', logo: '👑' },
+  { name: 'Apple', logo: '/images/logos/apple-11.svg' },
+  { name: 'Samsung', logo: '/images/logos/samsung-8.svg' },
+  { name: 'Sony', logo: '/images/logos/sony-2.svg' },
+  { name: 'Xiaomi', logo: '/images/logos/xiaomi-1.svg' },
+  { name: 'Google Pixel', logo: '/images/logos/google-pixel-1.svg' },
+  { name: 'JBL', logo: '/images/logos/jbl-2.svg' },
+  { name: 'Beats', logo: '/images/logos/beats-electronics.svg' },
+  { name: 'Chanel', logo: '/images/logos/chanel-2.svg' },
+  { name: 'Dior', logo: '/images/logos/dior.svg' },
+  { name: 'Versace', logo: '/images/logos/versace.svg' },
 ];
 
 const BrandMarquee = () => {
   return (
-    <section className="py-6 border-y bg-muted/30">
-      <div className="overflow-hidden">
-        <div className="marquee flex items-center gap-10 opacity-70 hover:opacity-100">
-          {[...brands, ...brands].map((b, i) => (
-            <div key={`${b.name}-${i}`} className="flex items-center gap-2 text-lg whitespace-nowrap">
-              <span className="text-xl">{b.logo}</span>
-              <span className="font-semibold">{b.name}</span>
-            </div>
-          ))}
-        </div>
+    <section className="py-12 bg-gray-100 overflow-hidden">
+      <div className="marquee flex items-center gap-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
+        {[...brands, ...brands].map((b, i) => (
+          <div key={`${b.name}-${i}`} className="flex items-center justify-center min-w-[120px] whitespace-nowrap flex-shrink-0">
+            <img
+              src={b.logo}
+              alt={`${b.name} logo`}
+              className="h-12 w-auto max-w-[100px] object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+            />
+          </div>
+        ))}
       </div>
     </section>
   );
