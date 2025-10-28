@@ -5,7 +5,7 @@ import { products } from "@/data/products";
 
 const Index = () => {
   const celulares = products.filter((p) => p.category === "celulares").slice(0, 5);
-  const pods = products.filter((p) => p.category === "pods").slice(0, 5);
+  const vapes = products.filter((p) => p.category === "vapes").slice(0, 5);
   const perfumes = products.filter((p) => p.category === "perfumes").slice(0, 5);
 
   return (
@@ -24,9 +24,9 @@ const Index = () => {
         <SectionDivider />
         
         <CategorySection
-          title="Pods Premium"
-          products={pods}
-          viewMoreLink="/pods"
+          title="Vapes Premium"
+          products={vapes}
+          viewMoreLink="/vapes"
         />
         
         <SectionDivider />

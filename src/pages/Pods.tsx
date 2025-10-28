@@ -3,13 +3,13 @@ import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
 import { products } from "@/data/products";
 
-const Pods = () => {
-  const pods = products.filter((p) => p.category === "pods");
+const Vapes = () => {
+  const vapes = products.filter((p) => p.category === "vapes");
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
 
   const filteredProducts = selectedBrand
-    ? pods.filter((p) => p.brand === selectedBrand)
-    : pods;
+    ? vapes.filter((p) => p.brand === selectedBrand)
+    : vapes;
 
   return (
     <div className="min-h-screen">
@@ -18,7 +18,7 @@ const Pods = () => {
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=1920&q=80"
-            alt="Auriculares y pods"
+            alt="Vapes y dispositivos de vapeo"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/50" />
@@ -27,10 +27,10 @@ const Pods = () => {
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center text-white px-4 max-w-4xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              Pods
+              Vapes
             </h1>
             <p className="text-xl md:text-2xl lg:text-3xl opacity-90 mb-8">
-              Auriculares inalámbricos con la mejor calidad de sonido
+              Dispositivos de vapeo con la mejor tecnología
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
               <span className="px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
@@ -53,7 +53,7 @@ const Pods = () => {
           <div className="flex flex-col lg:flex-row gap-6">
             <aside className="w-full lg:w-64 shrink-0">
               <BrandFilter
-                products={pods}
+                products={vapes}
                 selectedBrand={selectedBrand}
                 onBrandSelect={setSelectedBrand}
               />
@@ -77,4 +77,4 @@ const Pods = () => {
   );
 };
 
-export default Pods;
+export default Vapes;

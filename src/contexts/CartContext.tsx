@@ -7,7 +7,7 @@ export interface Product {
   price: number;
   image: string;
   description: string;
-  category: "celulares" | "pods" | "perfumes";
+  category: "celulares" | "vapes" | "perfumes";
   brand: string;
 }
 

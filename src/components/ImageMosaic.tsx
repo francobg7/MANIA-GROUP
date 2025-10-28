@@ -11,7 +11,7 @@ const images = [
     title: 'AirPods Pro 2',
     description: 'Cancelación de ruido adaptativa con USB-C',
     price: 'U$ 2.490,00',
-    category: 'Audio'
+    category: 'Vapes'
   },
   {
     src: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80',
@@ -39,7 +39,7 @@ const images = [
     title: 'Sony WF-1000XM5',
     description: 'Los mejores auriculares con cancelación de ruido',
     price: 'U$ 2.990,00',
-    category: 'Audio'
+    category: 'Vapes'
   },
 ];
 

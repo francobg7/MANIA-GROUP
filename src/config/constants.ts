@@ -21,7 +21,7 @@ export const APP_CONFIG = {
 export const ROUTES = {
   HOME: '/',
   CELULARES: '/celulares',
-  PODS: '/pods',
+  PODS: '/vapes',
   PERFUMES: '/perfumes',
   CARRITO: '/carrito',
 } as const;
@@ -29,7 +29,7 @@ export const ROUTES = {
 // Product categories
 export const CATEGORIES = {
   CELULARES: 'celulares',
-  PODS: 'pods',
+  PODS: 'vapes',
   PERFUMES: 'perfumes',
 } as const;
 

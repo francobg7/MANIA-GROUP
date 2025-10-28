@@ -30,7 +30,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Inicio", path: "/" },
     { name: "Celulares", path: "/celulares" },
-    { name: "Pods", path: "/pods" },
+    { name: "Vapes", path: "/vapes" },
     { name: "Perfumes", path: "/perfumes" },
   ];
 

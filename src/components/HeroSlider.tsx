@@ -8,16 +8,16 @@ const slides = [
     image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&q=80",
     title: "Lo último en tecnología",
     subtitle: "Descubre los mejores smartphones del mercado",
-    ctaText: "PODS",
-    ctaLink: "/pods"
+    ctaText: "VAPES",
+    ctaLink: "/vapes"
   },
   {
     id: 2,
     image: "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=1200&q=80",
     title: "Sonido premium",
     subtitle: "Auriculares con cancelación de ruido",
-    ctaText: "PODS",
-    ctaLink: "/pods"
+    ctaText: "VAPES",
+    ctaLink: "/vapes"
   },
   {
     id: 3,

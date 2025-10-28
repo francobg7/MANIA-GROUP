@@ -120,7 +120,7 @@ export const products: Product[] = [
     price: 249000,
     image: "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500&q=80",
     description: "Cancelación de ruido adaptativa USB-C",
-    category: "pods",
+    category: "vapes",
     brand: "Apple",
   },
   {
@@ -129,7 +129,7 @@ export const products: Product[] = [
     price: 199000,
     image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&q=80",
     description: "Bora Purple, ANC inteligente, 360 Audio",
-    category: "pods",
+    category: "vapes",
     brand: "Samsung",
   },
   {
@@ -138,7 +138,7 @@ export const products: Product[] = [
     price: 299000,
     image: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500&q=80",
     description: "Platinum Silver, mejor cancelación de ruido",
-    category: "pods",
+    category: "vapes",
     brand: "Sony",
   },
   {
@@ -147,7 +147,7 @@ export const products: Product[] = [
     price: 179000,
     image: "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500&q=80",
     description: "Charcoal, sonido premium, ANC",
-    category: "pods",
+    category: "vapes",
     brand: "Google",
   },
   {
@@ -156,7 +156,7 @@ export const products: Product[] = [
     price: 89000,
     image: "https://images.unsplash.com/photo-1545127398-14699f92334b?w=500&q=80",
     description: "Negro, cancelación de ruido, 40h batería",
-    category: "pods",
+    category: "vapes",
     brand: "JBL",
   },
   {
@@ -165,7 +165,7 @@ export const products: Product[] = [
     price: 199000,
     image: "https://images.unsplash.com/photo-1631867675167-90a456a90863?w=500&q=80",
     description: "Stone Purple, audio espacial",
-    category: "pods",
+    category: "vapes",
     brand: "Beats",
   },
   {
@@ -174,7 +174,7 @@ export const products: Product[] = [
     price: 149000,
     image: "https://images.unsplash.com/photo-1608156639585-b3a0b3d6f729?w=500&q=80",
     description: "Transparente, ANC personalizado",
-    category: "pods",
+    category: "vapes",
     brand: "Nothing",
   },
   {
@@ -183,7 +183,7 @@ export const products: Product[] = [
     price: 129000,
     image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&q=80",
     description: "Starry Blue, reducción de ruido 48dB",
-    category: "pods",
+    category: "vapes",
     brand: "Xiaomi",
   },
 
