@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { useCart } from "@/contexts/CartContext";
 import { products } from "@/data/products";
 import { Product } from "@/contexts/CartContext";
+import { formatUSD } from "@/lib/utils";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -77,9 +78,7 @@ const Navbar = () => {
                     />
                     <div className="flex-1">
                       <p className="font-medium text-foreground">{product.name}</p>
-                      <p className="text-sm text-muted-foreground">
-                        ${product.price.toLocaleString()}
-                      </p>
+                      <p className="text-sm text-muted-foreground">{formatUSD(product.price)}</p>
                     </div>
                   </Link>
                 ))}

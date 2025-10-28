@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -8,18 +9,24 @@ const slides = [
     image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&q=80",
     title: "Lo último en tecnología",
     subtitle: "Descubre los mejores smartphones del mercado",
+    ctaText: "VER IPHONES",
+    ctaLink: "/celulares"
   },
   {
     id: 2,
     image: "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=1200&q=80",
     title: "Sonido premium",
     subtitle: "Auriculares con cancelación de ruido",
+    ctaText: "VER PODS",
+    ctaLink: "/pods"
   },
   {
     id: 3,
     image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&q=80",
     title: "Fragancias exclusivas",
     subtitle: "Perfumes de las mejores marcas",
+    ctaText: "VER PERFUMES",
+    ctaLink: "/perfumes"
   },
 ];
 
@@ -65,9 +72,17 @@ const HeroSlider = () => {
               <h2 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
                 {slide.title}
               </h2>
-              <p className="text-xl md:text-2xl opacity-90 animate-fade-in">
+              <p className="text-xl md:text-2xl opacity-90 mb-8 animate-fade-in">
                 {slide.subtitle}
               </p>
+              <Link to={slide.ctaLink}>
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-3 animate-fade-in"
+                >
+                  {slide.ctaText}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useCart } from "@/contexts/CartContext";
+import { formatUSD } from "@/lib/utils";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -16,11 +17,11 @@ const Carrito = () => {
     cart.forEach((item) => {
       message += `📦 *${item.name}*\n`;
       message += `   Cantidad: ${item.quantity}\n`;
-      message += `   Precio: $${item.price.toLocaleString()}\n`;
-      message += `   Subtotal: $${(item.price * item.quantity).toLocaleString()}\n\n`;
+      message += `   Precio: ${formatUSD(item.price)}\n`;
+      message += `   Subtotal: ${formatUSD(item.price * item.quantity)}\n\n`;
     });
 
-    message += `💰 *Total: $${getTotalPrice().toLocaleString()}*`;
+    message += `💰 *Total: ${formatUSD(getTotalPrice())}*`;
 
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
@@ -68,9 +69,7 @@ const Carrito = () => {
                     <p className="text-sm text-muted-foreground mb-2">
                       {item.description}
                     </p>
-                    <p className="text-xl font-bold">
-                      ${item.price.toLocaleString()}
-                    </p>
+                    <p className="text-xl font-bold">{formatUSD(item.price)}</p>
                   </div>
                   <div className="flex flex-col items-end justify-between">
                     <Button
@@ -105,9 +104,7 @@ const Carrito = () => {
                         <Plus className="h-4 w-4" />
                       </Button>
                     </div>
-                    <p className="text-lg font-semibold">
-                      ${(item.price * item.quantity).toLocaleString()}
-                    </p>
+                    <p className="text-lg font-semibold">{formatUSD(item.price * item.quantity)}</p>
                   </div>
                 </div>
               </CardContent>
@@ -119,9 +116,7 @@ const Carrito = () => {
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-6">
               <span className="text-2xl font-bold">Total:</span>
-              <span className="text-3xl font-bold">
-                ${getTotalPrice().toLocaleString()}
-              </span>
+              <span className="text-3xl font-bold">{formatUSD(getTotalPrice())}</span>
             </div>
             <Button
               size="lg"

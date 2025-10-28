@@ -75,6 +75,44 @@ export const products: Product[] = [
     brand: "Motorola",
   },
 
+  // iPhone 17 Pro Max - Nuevos ingresos (precios en USD)
+  {
+    id: "cel-9",
+    name: "IPHONE 17 PRO MAX 256GB SILVER",
+    price: 1355,
+    image: "https://images.unsplash.com/photo-1678652197950-54cc1d3c0e29?w=500&q=80",
+    description: "iPhone 17 Pro Max, 256GB, color Silver",
+    category: "celulares",
+    brand: "Apple",
+  },
+  {
+    id: "cel-10",
+    name: "IPHONE 17 PRO MAX 512GB ORANGE",
+    price: 1695,
+    image: "https://images.unsplash.com/photo-1696446702183-cbd022772db8?w=500&q=80",
+    description: "iPhone 17 Pro Max, 512GB, color Orange",
+    category: "celulares",
+    brand: "Apple",
+  },
+  {
+    id: "cel-11",
+    name: "IPHONE 17 PRO MAX 512GB BLUE",
+    price: 1695,
+    image: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&q=80",
+    description: "iPhone 17 Pro Max, 512GB, color Blue",
+    category: "celulares",
+    brand: "Apple",
+  },
+  {
+    id: "cel-12",
+    name: "IPHONE 17 PRO MAX 512GB SILVER",
+    price: 1695,
+    image: "https://images.unsplash.com/photo-1678652197950-54cc1d3c0e29?w=500&q=80",
+    description: "iPhone 17 Pro Max, 512GB, color Silver",
+    category: "celulares",
+    brand: "Apple",
+  },
+
   // Pods
   {
     id: "pod-1",

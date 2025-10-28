@@ -4,6 +4,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
 import { Product, useCart } from "@/contexts/CartContext";
+import { formatUSD } from "@/lib/utils";
 
 interface ProductCardProps {
   product: Product;
@@ -38,7 +39,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
           {product.description}
         </p>
-        <p className="text-2xl font-bold">${product.price.toLocaleString()}</p>
+        <p className="text-2xl font-bold">{formatUSD(product.price)}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0 flex flex-col gap-3">
         <div className="flex items-center justify-center gap-2 w-full">
