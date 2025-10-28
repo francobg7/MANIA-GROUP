@@ -11,6 +11,7 @@ import Perfumes from "./pages/Perfumes";
 import Carrito from "./pages/Carrito";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -21,16 +22,21 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/celulares" element={<Celulares />} />
-            <Route path="/pods" element={<Pods />} />
-            <Route path="/perfumes" element={<Perfumes />} />
-            <Route path="/carrito" element={<Carrito />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-1">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/celulares" element={<Celulares />} />
+                <Route path="/pods" element={<Pods />} />
+                <Route path="/perfumes" element={<Perfumes />} />
+                <Route path="/carrito" element={<Carrito />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
         </BrowserRouter>
       </CartProvider>
     </TooltipProvider>
