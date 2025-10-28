@@ -94,4 +94,19 @@ All colors MUST be HSL.
   .smooth-transition {
     transition: var(--transition-smooth);
   }
+
+  /* Marquee animation for brand strip */
+  .marquee {
+    --duration: 30s;
+    width: max-content;
+    animation: marquee var(--duration) linear infinite;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }

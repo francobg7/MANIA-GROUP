@@ -1,5 +1,6 @@
 import HeroSlider from "@/components/HeroSlider";
 import CategorySection from "@/components/CategorySection";
+import { PromoBanner, BrandMarquee, SectionDivider, ImageMosaic } from "@/components";
 import { products } from "@/data/products";
 
 const Index = () => {
@@ -10,6 +11,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <HeroSlider />
+      <PromoBanner />
+      <BrandMarquee />
       
       <div className="py-8">
         <CategorySection
@@ -18,7 +21,7 @@ const Index = () => {
           viewMoreLink="/celulares"
         />
         
-        <div className="border-t border-border my-8" />
+        <SectionDivider />
         
         <CategorySection
           title="Pods Premium"
@@ -26,7 +29,7 @@ const Index = () => {
           viewMoreLink="/pods"
         />
         
-        <div className="border-t border-border my-8" />
+        <SectionDivider />
         
         <CategorySection
           title="Perfumes Exclusivos"
@@ -34,6 +37,8 @@ const Index = () => {
           viewMoreLink="/perfumes"
         />
       </div>
+
+      <ImageMosaic />
     </div>
   );
 };
