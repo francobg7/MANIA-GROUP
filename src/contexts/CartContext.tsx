@@ -8,6 +8,7 @@ export interface Product {
   image: string;
   description: string;
   category: "celulares" | "pods" | "perfumes";
+  brand: string;
 }
 
 export interface CartItem extends Product {

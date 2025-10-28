@@ -9,6 +9,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1696446702183-cbd022772db8?w=500&q=80",
     description: "Titanio Natural, 256GB, Chip A17 Pro",
     category: "celulares",
+    brand: "Apple",
   },
   {
     id: "cel-2",
@@ -17,6 +18,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&q=80",
     description: "Titanium Black, 512GB, IA integrada",
     category: "celulares",
+    brand: "Samsung",
   },
   {
     id: "cel-3",
@@ -25,6 +27,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&q=80",
     description: "Obsidian, 256GB, Cámara avanzada",
     category: "celulares",
+    brand: "Google",
   },
   {
     id: "cel-4",
@@ -33,6 +36,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1592286927505-67eb7d46dbe6?w=500&q=80",
     description: "Titanium Gray, 512GB, Snapdragon 8 Gen 3",
     category: "celulares",
+    brand: "Xiaomi",
   },
   {
     id: "cel-5",
@@ -41,6 +45,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&q=80",
     description: "Flowy Emerald, 256GB, Carga rápida 100W",
     category: "celulares",
+    brand: "OnePlus",
   },
   {
     id: "cel-6",
@@ -49,6 +54,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1678652197950-54cc1d3c0e29?w=500&q=80",
     description: "Midnight, 128GB, Excelente cámara",
     category: "celulares",
+    brand: "Apple",
   },
   {
     id: "cel-7",
@@ -57,6 +63,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1583573607873-4bb3a4cca2cd?w=500&q=80",
     description: "Awesome Violet, 256GB, 5G",
     category: "celulares",
+    brand: "Samsung",
   },
   {
     id: "cel-8",
@@ -65,6 +72,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=500&q=80",
     description: "Interstellar Black, 512GB",
     category: "celulares",
+    brand: "Motorola",
   },
 
   // Pods
@@ -75,6 +83,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500&q=80",
     description: "Cancelación de ruido adaptativa USB-C",
     category: "pods",
+    brand: "Apple",
   },
   {
     id: "pod-2",
@@ -83,6 +92,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&q=80",
     description: "Bora Purple, ANC inteligente, 360 Audio",
     category: "pods",
+    brand: "Samsung",
   },
   {
     id: "pod-3",
@@ -91,6 +101,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500&q=80",
     description: "Platinum Silver, mejor cancelación de ruido",
     category: "pods",
+    brand: "Sony",
   },
   {
     id: "pod-4",
@@ -99,6 +110,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500&q=80",
     description: "Charcoal, sonido premium, ANC",
     category: "pods",
+    brand: "Google",
   },
   {
     id: "pod-5",
@@ -107,6 +119,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1545127398-14699f92334b?w=500&q=80",
     description: "Negro, cancelación de ruido, 40h batería",
     category: "pods",
+    brand: "JBL",
   },
   {
     id: "pod-6",
@@ -115,6 +128,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1631867675167-90a456a90863?w=500&q=80",
     description: "Stone Purple, audio espacial",
     category: "pods",
+    brand: "Beats",
   },
   {
     id: "pod-7",
@@ -123,6 +137,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1608156639585-b3a0b3d6f729?w=500&q=80",
     description: "Transparente, ANC personalizado",
     category: "pods",
+    brand: "Nothing",
   },
   {
     id: "pod-8",
@@ -131,6 +146,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&q=80",
     description: "Starry Blue, reducción de ruido 48dB",
     category: "pods",
+    brand: "Xiaomi",
   },
 
   // Perfumes
@@ -141,6 +157,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&q=80",
     description: "EDT 100ml, fresco y especiado",
     category: "perfumes",
+    brand: "Dior",
   },
   {
     id: "perf-2",
@@ -149,6 +166,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=500&q=80",
     description: "EDP 100ml, elegante y aromático",
     category: "perfumes",
+    brand: "Chanel",
   },
   {
     id: "perf-3",
@@ -157,6 +175,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=500&q=80",
     description: "EDP 100ml, intenso y fresco",
     category: "perfumes",
+    brand: "Yves Saint Laurent",
   },
   {
     id: "perf-4",
@@ -165,6 +184,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=500&q=80",
     description: "EDT 100ml, dulce y especiado",
     category: "perfumes",
+    brand: "Paco Rabanne",
   },
   {
     id: "perf-5",
@@ -173,6 +193,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=500&q=80",
     description: "EDP 80ml, sensual y floral",
     category: "perfumes",
+    brand: "Carolina Herrera",
   },
   {
     id: "perf-6",
@@ -181,6 +202,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=500&q=80",
     description: "EDP 100ml, lujoso y sofisticado",
     category: "perfumes",
+    brand: "Tom Ford",
   },
   {
     id: "perf-7",
@@ -189,6 +211,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59926?w=500&q=80",
     description: "EDT 100ml, fresco y vibrante",
     category: "perfumes",
+    brand: "Versace",
   },
   {
     id: "perf-8",
@@ -197,5 +220,6 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=500&q=80",
     description: "EDT 75ml, oriental y sensual",
     category: "perfumes",
+    brand: "Giorgio Armani",
   },
 ];
