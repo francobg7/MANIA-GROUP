@@ -116,10 +116,10 @@ export const products: Product[] = [
   // Pods
   {
     id: "pod-1",
-    name: "AirPods Pro 2",
-    price: 249000,
-    image: "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500&q=80",
-    description: "Cancelación de ruido adaptativa USB-C",
+    name: "IGNITE V250 ROSE ALOE GRAPE",
+    price: 10.50,
+    image: "/images/pods/ignite/250.jpg",
+    description: "Ignite V250 Rose Aloe Grape",
     category: "vapes",
     brand: "Ignite",
   },
