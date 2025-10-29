@@ -4,12 +4,18 @@ const brands = [
   { name: 'Sony', logo: '/images/logos/sony-logo.png' },
   { name: 'Xiaomi', logo: '/images/logos/xiaomi-1.svg' },
   { name: 'JBL', logo: '/images/logos/jbl-logo.png' },
-  { name: 'Beats', logo: '/images/logos/beats-electronics.svg' },
   { name: 'Chanel', logo: '/images/logos/chanel-2.svg' },
   { name: 'Dior', logo: '/images/logos/dior-logo.png' },
   { name: 'Versace', logo: '/images/logos/versace-logo.png' },
   { name: 'BlackSheep', logo: '/images/logos/blacksheep-logo.png' },
   { name: 'Ignite', logo: '/images/logos/ignite-logo.png' },
+  { name: 'Hugo Boss', logo: '/images/logos/boss-hugo-boss-1.svg' },
+  { name: 'Calvin Klein', logo: '/images/logos/calvin-klein-logo.svg' },
+  { name: 'Giorgio Armani', logo: '/images/logos/giorgio-armani-3.svg' },
+  { name: 'Gucci', logo: '/images/logos/gucci.svg' },
+  { name: 'Jean Paul Gaultier', logo: '/images/logos/jean-paul-gaultier.png' },
+  { name: 'Azzaro', logo: '/images/logos/logo_azzaro_1.png' },
+  { name: 'Saint Laurent', logo: '/images/logos/saintlaurent-logo.png' },
 ];
 
 const BrandMarquee = () => {
