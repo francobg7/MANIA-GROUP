@@ -17,7 +17,7 @@ const Perfumes = () => {
       <section className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=1920&q=80"
+            src="/images/perfumes/tomford.jpeg"
             alt="Perfumes y fragancias"
             className="w-full h-full object-cover"
           />
