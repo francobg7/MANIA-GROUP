@@ -81,15 +81,13 @@ const HeroSlider = () => {
             alt={slide.title}
             className="w-full h-full object-cover"
           />
-          {/* Enhanced overlay with gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           
           {/* Content container with better positioning */}
           <div className="absolute inset-0 flex items-center">
             <div className="container mx-auto px-4 md:px-6 lg:px-8 w-full">
               <div className="max-w-4xl">
                 {/* Title with enhanced animation */}
-                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 md:mb-6 leading-tight transition-all duration-700 delay-200 ${
+                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] mb-4 md:mb-6 leading-tight transition-all duration-700 delay-200 ${
                   index === currentSlide ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
                 }`}>
                   {slide.title.split(' ').map((word, i) => (
@@ -108,7 +106,7 @@ const HeroSlider = () => {
                 </h1>
                 
                 {/* Subtitle */}
-                <p className={`text-lg sm:text-xl md:text-2xl text-white/90 mb-6 md:mb-8 font-light leading-relaxed transition-all duration-700 delay-400 ${
+                <p className={`text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)] mb-6 md:mb-8 font-light leading-relaxed transition-all duration-700 delay-400 ${
                   index === currentSlide ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                 }`}>
                   {slide.subtitle}
