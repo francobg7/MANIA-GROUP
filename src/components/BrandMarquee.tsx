@@ -15,7 +15,7 @@ const brands = [
 
 const BrandMarquee = () => {
   return (
-    <section className="py-12 bg-gray-100 overflow-hidden">
+    <section className="py-12 pt-8 md:pt-10 bg-gray-100 overflow-hidden">
       <div className="marquee flex items-center gap-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
         {[...brands, ...brands].map((b, i) => (
           <div key={`${b.name}-${i}`} className="flex items-center justify-center min-w-[120px] whitespace-nowrap flex-shrink-0">
