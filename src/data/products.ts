@@ -121,7 +121,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500&q=80",
     description: "Cancelación de ruido adaptativa USB-C",
     category: "vapes",
-    brand: "Apple",
+    brand: "Ignite",
   },
   {
     id: "pod-2",

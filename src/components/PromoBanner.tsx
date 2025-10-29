@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Sparkles, Rocket } from "lucide-react";
 
 const PromoBanner = () => {
@@ -18,14 +17,7 @@ const PromoBanner = () => {
               Descubrí descuentos exclusivos por tiempo limitado. Envíos a todo el país.
             </p>
           </div>
-          <div className="flex items-center gap-3">
-            <Button size="lg">
-              Comprar ahora
-            </Button>
-            <Button size="lg" variant="outline">
-              Ver categorías
-            </Button>
-          </div>
+          
         </div>
       </div>
       <div className="pointer-events-none absolute -right-10 -bottom-10 opacity-20">

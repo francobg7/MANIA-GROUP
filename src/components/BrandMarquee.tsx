@@ -9,6 +9,8 @@ const brands = [
   { name: 'Chanel', logo: '/images/logos/chanel-2.svg' },
   { name: 'Dior', logo: '/images/logos/dior-logo.png' },
   { name: 'Versace', logo: '/images/logos/versace-logo.png' },
+  { name: 'BlackSheep', logo: '/images/logos/blacksheep-logo.png' },
+  { name: 'Ignite', logo: '/images/logos/ignite-logo.png' },
 ];
 
 const BrandMarquee = () => {
@@ -20,7 +22,7 @@ const BrandMarquee = () => {
             <img
               src={b.logo}
               alt={`${b.name} logo`}
-              className="h-12 w-auto max-w-[100px] object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              className="h-22 w-auto max-w-[100px] object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
             />
           </div>
         ))}
