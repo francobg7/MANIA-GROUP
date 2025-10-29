@@ -13,7 +13,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "/images/pods/hero.jpg",
+    image: "/images/pods/p1.jpg",
     title: "Sonido premium",
     subtitle: "Auriculares con cancelación de ruido",
     ctaText: "Vapes",
