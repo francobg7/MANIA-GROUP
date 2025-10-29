@@ -13,7 +13,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=1200&q=80",
+    image: "/images/pods/hero.jpg",
     title: "Sonido premium",
     subtitle: "Auriculares con cancelación de ruido",
     ctaText: "Vapes",
@@ -21,7 +21,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "/images/perfumes/hero.jpg",
+    image: "/images/perfumes/h1.jpeg",
     title: "Fragancias exclusivas",
     subtitle: "Perfumes de las mejores marcas",
     ctaText: "Perfumes",
