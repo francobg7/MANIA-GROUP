@@ -3,7 +3,6 @@ const brands = [
   { name: 'Samsung', logo: '/images/logos/samsung-8.svg' },
   { name: 'Sony', logo: '/images/logos/sony-logo.png' },
   { name: 'Xiaomi', logo: '/images/logos/xiaomi-1.svg' },
-  { name: 'Google Pixel', logo: '/images/logos/google-pixel-1.svg' },
   { name: 'JBL', logo: '/images/logos/jbl-logo.png' },
   { name: 'Beats', logo: '/images/logos/beats-electronics.svg' },
   { name: 'Chanel', logo: '/images/logos/chanel-2.svg' },
