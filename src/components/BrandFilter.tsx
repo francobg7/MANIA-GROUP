@@ -8,8 +8,11 @@ interface BrandFilterProps {
 }
 
 const BrandFilter = ({ products, selectedBrand, onBrandSelect }: BrandFilterProps) => {
-  // Extraer marcas únicas de los productos
-  const brands = Array.from(new Set(products.map((p) => p.brand))).sort();
+  // Extraer marcas únicas de los productos, excluyendo marcas sin stock
+  const excludedBrands = ["Google", "Motorola", "OnePlus"];
+  const brands = Array.from(
+    new Set(products.map((p) => p.brand).filter((b) => !excludedBrands.includes(b)))
+  ).sort();
 
   return (
     <div className="bg-card rounded-lg p-6 border border-border h-fit sticky top-4">
