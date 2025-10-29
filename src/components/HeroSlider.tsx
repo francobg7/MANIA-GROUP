@@ -21,7 +21,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "/images/perfumes/jpg2.jpg",
+    image: "/images/perfumes/hero.jpg",
     title: "Fragancias exclusivas",
     subtitle: "Perfumes de las mejores marcas",
     ctaText: "Perfumes",
@@ -62,7 +62,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl">
+    <div className="relative w-full h-[500px] md:h-[650px] lg:h-[750px] xl:h-[850px] overflow-hidden shadow-2xl">
       {/* Background with enhanced gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />
       

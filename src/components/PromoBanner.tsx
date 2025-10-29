@@ -2,7 +2,7 @@ import { Sparkles, Rocket } from "lucide-react";
 
 const PromoBanner = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden pt-12 md:pt-16 lg:pt-20">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/10 to-transparent" />
       <div className="container mx-auto px-4 py-8 relative">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
