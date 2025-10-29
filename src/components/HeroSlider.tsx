@@ -8,15 +8,15 @@ const slides = [
     image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&q=80",
     title: "Lo último en tecnología",
     subtitle: "Descubre los mejores smartphones del mercado",
-    ctaText: "VAPES",
-    ctaLink: "/vapes"
+    ctaText: "Celulares",
+    ctaLink: "/celulares"
   },
   {
     id: 2,
     image: "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=1200&q=80",
     title: "Sonido premium",
     subtitle: "Auriculares con cancelación de ruido",
-    ctaText: "VAPES",
+    ctaText: "Vapes",
     ctaLink: "/vapes"
   },
   {
@@ -24,8 +24,8 @@ const slides = [
     image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&q=80",
     title: "Fragancias exclusivas",
     subtitle: "Perfumes de las mejores marcas",
-    ctaText: "IPHONES",
-    ctaLink: "/celulares"
+    ctaText: "Perfumes",
+    ctaLink: "/perfumes"
   },
 ];
 

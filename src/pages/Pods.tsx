@@ -17,7 +17,7 @@ const Vapes = () => {
       <section className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=1920&q=80"
+            src="images/pods/vape-hero.jpg"
             alt="Vapes y dispositivos de vapeo"
             className="w-full h-full object-cover"
           />
@@ -33,15 +33,7 @@ const Vapes = () => {
               Dispositivos de vapeo con la mejor tecnología
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
-              <span className="px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
-                AirPods Pro 2
-              </span>
-              <span className="px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
-                Sony WF-1000XM5
-              </span>
-              <span className="px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
-                Samsung Galaxy Buds2 Pro
-              </span>
+              
             </div>
           </div>
         </div>

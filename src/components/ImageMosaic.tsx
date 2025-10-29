@@ -1,16 +1,16 @@
 const images = [
   {
-    src: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=80',
-    title: 'iPhone 15 Pro Max',
-    description: 'El smartphone más avanzado con titanio natural y chip A17 Pro',
-    price: 'U$ 12.990,00',
+    src: 'images/iphone/iphone-17.jpg',
+    title: 'iPhone 17 Pro Max',
+    description: 'El smartphone más avanzado de Apple',
+    price: 'A partir de U$ 1.365,00',
     category: 'Celulares'
   },
   {
-    src: 'https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=800&q=80',
-    title: 'AirPods Pro 2',
-    description: 'Cancelación de ruido adaptativa con USB-C',
-    price: 'U$ 2.490,00',
+    src: 'images/pods/banner-nomad.gif',
+    title: 'Vapes BlackSheep',
+    description: 'Vapes Premium',
+    price: 'A partir de U$ 10,50',
     category: 'Vapes'
   },
   {
@@ -34,13 +34,7 @@ const images = [
     price: 'U$ 1.390,00',
     category: 'Perfumes'
   },
-  {
-    src: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&q=80',
-    title: 'Sony WF-1000XM5',
-    description: 'Los mejores auriculares con cancelación de ruido',
-    price: 'U$ 2.990,00',
-    category: 'Vapes'
-  },
+  
 ];
 
 const ImageMosaic = () => {
@@ -49,7 +43,10 @@ const ImageMosaic = () => {
       <h3 className="text-2xl md:text-3xl font-bold mb-6">Tendencias de la semana</h3>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
         {images.map((item, idx) => (
-          <div key={idx} className={`group relative overflow-hidden rounded-lg aspect-[4/3] ${idx === 0 ? 'md:col-span-2 md:row-span-2 aspect-[16/9]' : ''}`}>
+          <div key={idx} className={`group relative overflow-hidden rounded-lg aspect-[4/3] ${
+            idx === 0 ? 'md:col-span-2 md:row-span-2 aspect-[16/9]' : 
+            idx === 1 || idx === 1 ? 'md:row-span-2 aspect-[3/4]' : ''
+          }`}>
             <img src={item.src} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 smooth-transition" />
             <div className="absolute inset-0 ring-1 ring-black/5" />
             
