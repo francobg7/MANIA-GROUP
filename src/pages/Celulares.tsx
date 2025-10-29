@@ -39,9 +39,7 @@ const Celulares = () => {
               <span className="px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
                 Samsung Galaxy S24
               </span>
-              <span className="px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
-                Google Pixel 8
-              </span>
+              
             </div>
           </div>
         </div>
