@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const slides = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&q=80",
+    image: "/images/iphone/hero.jpeg",
     title: "Lo último en tecnología",
     subtitle: "Descubre los mejores smartphones del mercado",
     ctaText: "Celulares",
@@ -21,7 +21,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&q=80",
+    image: "/images/perfumes/jpg2.jpg",
     title: "Fragancias exclusivas",
     subtitle: "Perfumes de las mejores marcas",
     ctaText: "Perfumes",
