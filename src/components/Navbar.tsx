@@ -16,9 +16,22 @@ const Navbar = () => {
 
   useEffect(() => {
     if (searchQuery.trim()) {
-      const results = products.filter((product) =>
-        product.name.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+      const query = searchQuery.toLowerCase();
+      const excludedBrands = [
+        "Beats",
+        "Google",
+        "Nothing",
+        "Samsung",
+        "Sony",
+        "Xiaomi",
+        "JBL",
+      ]; // excluir del buscador global
+      const results = products.filter((product) => {
+        if (excludedBrands.includes(product.brand)) return false;
+        const nameMatches = product.name.toLowerCase().includes(query);
+        const brandMatches = product.brand.toLowerCase().includes(query);
+        return nameMatches || brandMatches;
+      });
       setSearchResults(results.slice(0, 5));
       setShowResults(true);
     } else {
