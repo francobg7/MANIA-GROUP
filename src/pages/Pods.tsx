@@ -4,7 +4,11 @@ import BrandFilter from "@/components/BrandFilter";
 import { products } from "@/data/products";
 
 const Vapes = () => {
-  const vapes = products.filter((p) => p.category === "vapes");
+  const vapes = products.filter(
+    (p) =>
+      p.category === "vapes" &&
+      !["Beats", "Google", "Nothing", "Samsung", "Sony", "Xiaomi", "JBL"].includes(p.brand)
+  );
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
 
   const filteredProducts = selectedBrand
