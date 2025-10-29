@@ -1,6 +1,6 @@
 import HeroSlider from "@/components/HeroSlider";
 import CategorySection from "@/components/CategorySection";
-import { PromoBanner, BrandMarquee, SectionDivider, ImageMosaic } from "@/components";
+import { BrandMarquee, SectionDivider, ImageMosaic } from "@/components";
 import { products } from "@/data/products";
 
 const Index = () => {
@@ -11,7 +11,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <HeroSlider />
-      <PromoBanner />
+      
       <BrandMarquee />
       
       <div className="py-8">
