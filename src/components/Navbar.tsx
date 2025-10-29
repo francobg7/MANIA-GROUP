@@ -20,6 +20,8 @@ const Navbar = () => {
       const excludedBrands = [
         "Beats",
         "Google",
+        "Motorola",
+        "OnePlus",
         "Nothing",
         "Samsung",
         "Sony",
