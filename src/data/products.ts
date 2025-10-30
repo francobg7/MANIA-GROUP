@@ -210,10 +210,10 @@ export const products: Product[] = [
   // Nuevas marcas de vapes
   {
     id: "pod-11",
-    name: "Elf Bar 6000 Puffs",
-    price: 69900,
-    image: "/images/pods/back.png",
-    description: "Diseño compacto, sabores intensos, lista para usar",
+    name: "Elf Bar 40K Puffs",
+    price: 10,
+    image: "/images/pods/elf-bar/blue-raz-ice.jpeg",
+    description: "",
     category: "vapes",
     brand: "Elf Bar",
   },
@@ -258,17 +258,17 @@ export const products: Product[] = [
   { id: "pod-24", name: "Life Pod Cola Chill", price: 58900, image: "/images/pods/ignite.jpg", description: "Cola clásica con sensación fría", category: "vapes", brand: "Life Pod" },
 
   // Elf Bar - completar a 12 modelos (ya hay pod-11)
-  { id: "pod-25", name: "Elf Bar Crystal 4000", price: 59900, image: "/images/pods/back.png", description: "Diseño translúcido, gran sabor", category: "vapes", brand: "Elf Bar" },
-  { id: "pod-26", name: "Elf Bar Blue Razz Ice", price: 61900, image: "/images/pods/ignite.jpg", description: "Frambuesa azul con hielo", category: "vapes", brand: "Elf Bar" },
-  { id: "pod-27", name: "Elf Bar Strawberry Ice", price: 61900, image: "/images/pods/ignite.png", description: "Frutilla fresca con final frío", category: "vapes", brand: "Elf Bar" },
-  { id: "pod-28", name: "Elf Bar Watermelon", price: 60900, image: "/images/pods/back.png", description: "Sandía dulce, suave y jugosa", category: "vapes", brand: "Elf Bar" },
-  { id: "pod-29", name: "Elf Bar Peach Ice", price: 61900, image: "/images/pods/ignite.jpg", description: "Durazno dulce con frescor", category: "vapes", brand: "Elf Bar" },
-  { id: "pod-30", name: "Elf Bar Sour Apple", price: 59900, image: "/images/pods/ignite.png", description: "Manzana verde ácida y crujiente", category: "vapes", brand: "Elf Bar" },
-  { id: "pod-31", name: "Elf Bar Gummy Bear", price: 58900, image: "/images/pods/back.png", description: "Dulce inspirado en caramelos", category: "vapes", brand: "Elf Bar" },
-  { id: "pod-32", name: "Elf Bar Pineapple Ice", price: 61900, image: "/images/pods/ignite.jpg", description: "Ananá tropical con frío", category: "vapes", brand: "Elf Bar" },
-  { id: "pod-33", name: "Elf Bar Kiwi Passion", price: 62900, image: "/images/pods/ignite.png", description: "Kiwi y maracuyá vibrantes", category: "vapes", brand: "Elf Bar" },
-  { id: "pod-34", name: "Elf Bar Cola", price: 58900, image: "/images/pods/back.png", description: "Clásico sabor cola", category: "vapes", brand: "Elf Bar" },
-  { id: "pod-35", name: "Elf Bar Tropical Mix", price: 63900, image: "/images/pods/ignite.jpg", description: "Mezcla tropical equilibrada", category: "vapes", brand: "Elf Bar" },
+  { id: "pod-25", name: "Elf Bar 40K - CHERRY", price: 10, image: "/images/pods/elf-bar/cherry-fuse.jpeg", description: "", category: "vapes", brand: "Elf Bar" },
+  { id: "pod-26", name: "Elf Bar Blue Razz Ice", price: 10, image: "/images/pods/elf-bar/cherry-strazz.jpeg", description: "", category: "vapes", brand: "Elf Bar" },
+  { id: "pod-27", name: "Elf Bar Strawberry Ice", price: 10, image: "/images/pods/elf-bar/grape-ice.jpeg", description: "", category: "vapes", brand: "Elf Bar" },
+  { id: "pod-28", name: "Elf Bar Watermelon", price: 10, image: "/images/pods/back.png", description: "", category: "vapes", brand: "Elf Bar" },
+  { id: "pod-29", name: "Elf Bar Peach Ice", price: 10, image: "/images/pods/ignite.jpg", description: "", category: "vapes", brand: "Elf Bar" },
+  { id: "pod-30", name: "Elf Bar Sour Apple", price: 10, image: "/images/pods/ignite.png", description: "", category: "vapes", brand: "Elf Bar" },
+  { id: "pod-31", name: "Elf Bar Gummy Bear", price: 10, image: "/images/pods/back.png", description: "", category: "vapes", brand: "Elf Bar" },
+  { id: "pod-32", name: "Elf Bar Pineapple Ice", price: 10, image: "/images/pods/ignite.jpg", description: "", category: "vapes", brand: "Elf Bar" },
+  { id: "pod-33", name: "Elf Bar Kiwi Passion", price: 10, image: "/images/pods/ignite.png", description: "", category: "vapes", brand: "Elf Bar" },
+  { id: "pod-34", name: "Elf Bar Cola", price: 10, image: "/images/pods/back.png", description: "", category: "vapes", brand: "Elf Bar" },
+  { id: "pod-35", name: "Elf Bar Tropical Mix", price: 10, image: "/images/pods/ignite.jpg", description: "", category: "vapes", brand: "Elf Bar" },
 
   // Lost Mary - completar a 12 modelos (ya hay pod-12)
   { id: "pod-36", name: "Lost Mary Strawberry Kiwi", price: 62900, image: "/images/pods/ignite.png", description: "Frutilla y kiwi en balance", category: "vapes", brand: "Lost Mary" },
