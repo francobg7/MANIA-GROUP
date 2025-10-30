@@ -45,7 +45,7 @@ const ImageMosaic = () => {
         {images.map((item, idx) => (
           <div key={idx} className={`group relative overflow-hidden rounded-lg aspect-[4/3] ${
             idx === 0 ? 'md:col-span-2 md:row-span-2 aspect-[15/10]' : 
-            idx === 1 || idx === 1 ? 'md:row-span-2 aspect-[3/4]' : ''
+            idx === 1 ? 'md:row-span-2 aspect-[6/9]' : ''
           }`}>
             <img src={item.src} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 smooth-transition" />
             <div className="absolute inset-0 ring-1 ring-black/5" />
