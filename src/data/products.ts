@@ -112,6 +112,15 @@ export const products: Product[] = [
     category: "celulares",
     brand: "Apple",
   },
+  {
+    id: "cel-13",
+    name: "iPhone 16 128GB WHITE",
+    price: 1355,
+    image: "https://images.unsplash.com/photo-1678652197950-54cc1d3c0e29?w=500&q=80",
+    description: "",
+    category: "celulares",
+    brand: "Apple",
+  },
 
   // Pods
   {
