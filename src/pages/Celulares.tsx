@@ -10,7 +10,8 @@ const Celulares = () => {
 
   // Función para extraer la serie de iPhone del nombre del producto
   const getiPhoneSeries = (name: string): string | null => {
-    const match = name.match(/iPhone\s+(\d+)/i);
+    // Buscar tanto "iPhone" como "IPHONNE" (variantes comunes)
+    const match = name.match(/(?:iPhone|IPHONNE)\s+(\d+)/i);
     return match ? match[1] : null;
   };
 
