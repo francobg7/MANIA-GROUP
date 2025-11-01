@@ -1,13 +1,11 @@
 import { useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
-import { products } from "@/data/products";
+import { pods } from "@/data/pods";
 
 const Vapes = () => {
-  const vapes = products.filter(
-    (p) =>
-      p.category === "vapes" &&
-      !["Beats", "Google", "Nothing", "Samsung", "Sony", "Xiaomi", "JBL"].includes(p.brand)
+  const vapes = pods.filter(
+    (p) => !["Beats", "Google", "Nothing", "Samsung", "Sony", "Xiaomi", "JBL"].includes(p.brand)
   );
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
 
