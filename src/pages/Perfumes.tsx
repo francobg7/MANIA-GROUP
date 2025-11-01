@@ -1,10 +1,9 @@
 import { useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
-import { products } from "@/data/products";
+import { perfumes } from "@/data/perfumes";
 
 const Perfumes = () => {
-  const perfumes = products.filter((p) => p.category === "perfumes");
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
 
   const filteredProducts = selectedBrand
