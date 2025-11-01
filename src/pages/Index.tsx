@@ -1,14 +1,16 @@
 import HeroSlider from "@/components/HeroSlider";
 import CategorySection from "@/components/CategorySection";
 import { BrandMarquee, SectionDivider, ImageMosaic } from "@/components";
-import { products } from "@/data/products";
+import { celulares } from "@/data/celulares";
+import { pods } from "@/data/pods";
+import { perfumes } from "@/data/perfumes";
 
 const Index = () => {
-  const celulares = products.filter((p) => p.category === "celulares").slice(0, 5);
+  const celularesDestacados = celulares.slice(0, 5);
   const vapesPremium = ["Ignite", "Elf Bar", "Life Pod", "Lost Mary", "Geek Bar"]
-    .map((brand) => products.find((p) => p.category === "vapes" && p.brand === brand && p.image))
-    .filter(Boolean) as typeof products;
-  const perfumes = products.filter((p) => p.category === "perfumes").slice(0, 5);
+    .map((brand) => pods.find((p) => p.brand === brand && p.image))
+    .filter(Boolean) as typeof pods;
+  const perfumesDestacados = perfumes.slice(0, 5);
 
   return (
     <div className="min-h-screen">
@@ -19,7 +21,7 @@ const Index = () => {
       <div className="py-8">
         <CategorySection
           title="Celulares Destacados"
-          products={celulares}
+          products={celularesDestacados}
           viewMoreLink="/celulares"
         />
         
@@ -35,7 +37,7 @@ const Index = () => {
         
         <CategorySection
           title="Perfumes Exclusivos"
-          products={perfumes}
+          products={perfumesDestacados}
           viewMoreLink="/perfumes"
         />
       </div>
