@@ -6,10 +6,33 @@ import { products } from "@/data/products";
 const Celulares = () => {
   const celulares = products.filter((p) => p.category === "celulares");
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+  const [selectedSeries, setSelectedSeries] = useState<string | null>(null);
 
-  const filteredProducts = selectedBrand
-    ? celulares.filter((p) => p.brand === selectedBrand)
-    : celulares;
+  // Función para extraer la serie de iPhone del nombre del producto
+  const getiPhoneSeries = (name: string): string | null => {
+    const match = name.match(/iPhone\s+(\d+)/i);
+    return match ? match[1] : null;
+  };
+
+  const filteredProducts = celulares.filter((product) => {
+    // Si hay una serie seleccionada, filtrar por serie
+    if (selectedSeries) {
+      const productSeries = getiPhoneSeries(product.name);
+      if (productSeries !== selectedSeries) {
+        return false;
+      }
+      // Si coincide la serie, también debe ser Apple
+      return product.brand === "Apple";
+    }
+    
+    // Si hay una marca seleccionada, filtrar por marca
+    if (selectedBrand) {
+      return product.brand === selectedBrand;
+    }
+    
+    // Si no hay filtros, mostrar todos
+    return true;
+  });
 
   return (
     <div className="min-h-screen">
@@ -53,7 +76,15 @@ const Celulares = () => {
               <BrandFilter
                 products={celulares}
                 selectedBrand={selectedBrand}
-                onBrandSelect={setSelectedBrand}
+                onBrandSelect={(brand) => {
+                  setSelectedBrand(brand);
+                  if (brand !== "Apple") {
+                    setSelectedSeries(null);
+                  }
+                }}
+                showAppleSubmenu={true}
+                selectedSeries={selectedSeries}
+                onSeriesSelect={setSelectedSeries}
               />
             </aside>
             <div className="flex-1">
