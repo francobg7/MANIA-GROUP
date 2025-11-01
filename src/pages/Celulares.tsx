@@ -30,8 +30,9 @@ const Celulares = () => {
       return product.brand === selectedBrand;
     }
     
-    // Si no hay filtros, mostrar todos
-    return true;
+    // Si no hay filtros, mostrar solo iPhone 17 Pro y Pro Max
+    const isIPhone17 = /IPHONE\s+17|iPhone\s+17/i.test(product.name);
+    return isIPhone17 && product.brand === "Apple";
   });
 
   return (
