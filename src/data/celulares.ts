@@ -594,5 +594,37 @@ export const celulares: Product[] = [
     category: "celulares",
     brand: "Apple",
   },
+  {
+    id: "cel-75",
+    name: "iPhone 16 128GB White",
+    price: 690,
+    image: "https://images.unsplash.com/photo-1725638235959-2c99cb0a7c1b?w=500&q=80",
+    category: "celulares",
+    brand: "Apple",
+  },
+  {
+    id: "cel-76",
+    name: "iPhone 16 128GB Blue",
+    price: 690,
+    image: "https://images.unsplash.com/photo-1725638209475-37c8e3d4b5f7?w=500&q=80",
+    category: "celulares",
+    brand: "Apple",
+  },
+  {
+    id: "cel-77",
+    name: "iPhone 16 128GB Pink",
+    price: 690,
+    image: "https://images.unsplash.com/photo-1725638253320-21a07f53fbd2?w=500&q=80",
+    category: "celulares",
+    brand: "Apple",
+  },
+  {
+    id: "cel-78",
+    name: "iPhone 16 128GB Green",
+    price: 690,
+    image: "https://images.unsplash.com/photo-1725638284093-7ad2dcae22f3?w=500&q=80",
+    category: "celulares",
+    brand: "Apple",
+  },
 ];
 
