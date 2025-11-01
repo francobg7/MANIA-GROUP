@@ -66,9 +66,6 @@ const Carrito = () => {
                   />
                   <div className="flex-1">
                     <h3 className="font-semibold text-lg mb-1">{item.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {item.description}
-                    </p>
                     <p className="text-xl font-bold">{formatUSD(item.price)}</p>
                   </div>
                   <div className="flex flex-col items-end justify-between">
