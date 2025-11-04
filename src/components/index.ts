@@ -10,3 +10,4 @@ export { default as PromoBanner } from './PromoBanner';
 export { default as BrandMarquee } from './BrandMarquee';
 export { default as SectionDivider } from './SectionDivider';
 export { default as ImageMosaic } from './ImageMosaic';
+export { default as BannerImage } from './BannerImage';
