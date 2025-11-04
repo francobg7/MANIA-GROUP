@@ -1,6 +1,6 @@
 import HeroSlider from "@/components/HeroSlider";
 import CategorySection from "@/components/CategorySection";
-import { BrandMarquee, SectionDivider, ImageMosaic } from "@/components";
+import { BrandMarquee, SectionDivider, ImageMosaic, BannerImage } from "@/components";
 import { celulares } from "@/data/celulares";
 import { pods } from "@/data/pods";
 import { perfumes } from "@/data/perfumes";
@@ -32,6 +32,8 @@ const Index = () => {
           products={vapesPremium}
           viewMoreLink="/vapes"
         />
+        
+        <BannerImage src="/images/banner.jpg" />
         
         <SectionDivider />
         
