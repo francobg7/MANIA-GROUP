@@ -35,8 +35,6 @@ const Index = () => {
         
         <BannerImage src="/images/banner.jpg" />
         
-        <SectionDivider />
-        
         <CategorySection
           title="Perfumes Exclusivos"
           products={perfumesDestacados}

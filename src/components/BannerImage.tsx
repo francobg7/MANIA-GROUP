@@ -9,7 +9,7 @@ const BannerImage = ({ src, alt = "Banner promocional", className = "" }: Banner
     <section className={`w-full my-8 md:my-12 ${className}`}>
       <div className="w-full overflow-hidden">
         <img
-          src="/images/logos/BANNER.png"
+          src="/images/logos/A.png"
           alt="Banner promocional especial"
           className="w-full h-auto object-cover"
           style={{
