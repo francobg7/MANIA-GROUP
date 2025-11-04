@@ -41,7 +41,7 @@ const Celulares = () => {
       <section className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/iphone/ng.jpg"
+            src="/images/iphone/hero.png"
             alt="Celulares y smartphones"
             className="w-full h-full object-cover"
           />
