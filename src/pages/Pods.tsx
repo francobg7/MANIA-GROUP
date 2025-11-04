@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
+import VapeBrandsGrid from "@/components/VapeBrandsGrid";
 import { pods } from "@/data/pods";
 
 const Vapes = () => {
@@ -12,6 +13,9 @@ const Vapes = () => {
   const filteredProducts = selectedBrand
     ? vapes.filter((p) => p.brand === selectedBrand)
     : vapes;
+
+  // Siempre usar la vista agrupada por marcas para vapes
+  const useBrandsView = true;
 
   return (
     <div className="min-h-screen">
@@ -42,8 +46,8 @@ const Vapes = () => {
       </section>
 
       {/* Products Section */}
-      <div className="py-12">
-        <div className="container mx-auto px-4">
+      <div className="py-12 w-full">
+        <div className="w-full px-4">
           <div className="flex flex-col lg:flex-row gap-6">
             <aside className="w-full lg:w-64 shrink-0">
               <BrandFilter
@@ -52,16 +56,24 @@ const Vapes = () => {
                 onBrandSelect={setSelectedBrand}
               />
             </aside>
-            <div className="flex-1">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
-              {filteredProducts.length === 0 && (
-                <p className="text-center text-muted-foreground py-12">
-                  No se encontraron productos de esta marca
-                </p>
+            <div className="flex-1 w-full">
+              {useBrandsView ? (
+                // Vista agrupada por marcas
+                <VapeBrandsGrid products={filteredProducts} />
+              ) : (
+                // Vista de grid tradicional para pocos productos
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredProducts.map((product) => (
+                      <ProductCard key={product.id} product={product} />
+                    ))}
+                  </div>
+                  {filteredProducts.length === 0 && (
+                    <p className="text-center text-muted-foreground py-12">
+                      No se encontraron productos de esta marca
+                    </p>
+                  )}
+                </>
               )}
             </div>
           </div>
