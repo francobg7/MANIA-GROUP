@@ -4,12 +4,12 @@ import { Minus, Plus, ShoppingCart } from "lucide-react";
 import { Product, useCart } from "@/contexts/CartContext";
 import { formatUSD } from "@/lib/utils";
 
-interface BlackSheep30KProps {
+interface LostMaryMT35KProps {
   products: Product[];
   hideHeader?: boolean;
 }
 
-const BlackSheep30K = ({ products, hideHeader = false }: BlackSheep30KProps) => {
+const LostMaryMT35K = ({ products, hideHeader = false }: LostMaryMT35KProps) => {
   const { addToCart } = useCart();
   const [selectedProduct, setSelectedProduct] = useState<Product>(products[0]);
   const [quantities, setQuantities] = useState<Record<string, number>>(() => {
@@ -51,10 +51,10 @@ const BlackSheep30K = ({ products, hideHeader = false }: BlackSheep30KProps) => 
         <>
           {/* Header con título de la marca */}
           <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white px-6 py-4">
-          <h2 className="text-2xl md:text-3xl font-bold">BLACK SHEEP 30K</h2>
-          <p className="text-sm text-gray-300 mt-1">
-            {products.length} {products.length === 1 ? "modelo disponible" : "modelos disponibles"}
-          </p>
+            <h2 className="text-2xl md:text-3xl font-bold">LOST MARY MT 35K</h2>
+            <p className="text-sm text-gray-300 mt-1">
+              {products.length} {products.length === 1 ? "modelo disponible" : "modelos disponibles"}
+            </p>
           </div>
         </>
       )}
@@ -165,5 +165,5 @@ const BlackSheep30K = ({ products, hideHeader = false }: BlackSheep30KProps) => 
   );
 };
 
-export default BlackSheep30K;
+export default LostMaryMT35K;
 

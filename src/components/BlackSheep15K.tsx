@@ -74,7 +74,7 @@ const BlackSheep15K = ({ products, hideHeader = false }: BlackSheep15KProps) => 
 
         {/* Lista de modelos (derecha) */}
         <div className="w-full lg:w-2/3 xl:w-3/5 p-4 lg:p-6 xl:p-8 bg-white">
-          <div className="space-y-2 max-h-[500px] lg:max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+          <div className="space-y-2 max-h-[500px] lg:max-h-[600px] overflow-y-auto overflow-x-hidden pr-2 custom-scrollbar">
             {products.map((product) => {
               const quantity = quantities[product.id] || 1;
               const isSelected = selectedProduct.id === product.id;
