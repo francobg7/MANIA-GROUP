@@ -72,8 +72,8 @@ const HeroSlider = () => {
           key={slide.id}
           className={`absolute inset-0 transition-all duration-700 ease-out ${
             index === currentSlide 
-              ? "opacity-100 scale-100" 
-              : "opacity-0 scale-105"
+              ? "opacity-100 scale-100 z-10 pointer-events-auto" 
+              : "opacity-0 scale-105 z-0 pointer-events-none"
           }`}
         >
           <img
@@ -113,7 +113,7 @@ const HeroSlider = () => {
                 </p>
 
                 {/* CTA Button */}
-                <Link to={slide.ctaLink}>
+                <Link to={slide.ctaLink} key={`cta-${slide.id}`}>
                   <Button 
                     size="lg" 
                     className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-3 transition-all duration-700"
