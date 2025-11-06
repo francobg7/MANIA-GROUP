@@ -32,17 +32,44 @@ const slides = [
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
+    // Intervalo para actualizar el progreso cada 50ms
+    // La barra se llena de 0% a 100% en 12 segundos (4 segundos x 3 slides)
+    const progressTimer = setInterval(() => {
+      setProgress((prev) => {
+        const newProgress = prev + (100 / 240); // 240 intervalos en 12 segundos (50ms cada uno)
+        
+        if (newProgress >= 100) {
+          return 0; // Reiniciar cuando llega a 100%
+        }
+        return newProgress;
+      });
+    }, 50);
+
+    return () => {
+      clearInterval(progressTimer);
+    };
   }, []);
+
+  // Cambiar de slide según el progreso
+  useEffect(() => {
+    if (progress >= 0 && progress < 33.33) {
+      setCurrentSlide(0); // Primera foto cuando llega a 1/3
+    } else if (progress >= 33.33 && progress < 66.66) {
+      setCurrentSlide(1); // Segunda foto cuando llega a 2/3
+    } else if (progress >= 66.66 && progress < 100) {
+      setCurrentSlide(2); // Tercera foto cuando llega a 2/3+
+    }
+  }, [progress]);
 
   const goToSlide = (index: number) => {
     if (isAnimating || index === currentSlide) return;
     setIsAnimating(true);
+    // Ajustar el progreso según el slide seleccionado
+    const targetProgress = (index / slides.length) * 100;
+    setProgress(targetProgress);
     setCurrentSlide(index);
     setTimeout(() => setIsAnimating(false), 500);
   };
@@ -50,14 +77,20 @@ const HeroSlider = () => {
   const goToPrevious = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    const newSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+    const targetProgress = (newSlide / slides.length) * 100;
+    setProgress(targetProgress);
+    setCurrentSlide(newSlide);
     setTimeout(() => setIsAnimating(false), 500);
   };
 
   const goToNext = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    const newSlide = (currentSlide + 1) % slides.length;
+    const targetProgress = (newSlide / slides.length) * 100;
+    setProgress(targetProgress);
+    setCurrentSlide(newSlide);
     setTimeout(() => setIsAnimating(false), 500);
   };
 
@@ -150,12 +183,13 @@ const HeroSlider = () => {
         ))}
       </div>
       
-      {/* Progress bar */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20">
+      {/* Progress bar - Barra rosa de progreso */}
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20 z-20">
         <div 
-          className="h-full bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-6000 ease-linear"
+          className="h-full bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600"
           style={{ 
-            width: `${((currentSlide + 1) / slides.length) * 100}%`
+            width: `${progress}%`,
+            transition: 'width 0.05s linear'
           }}
         />
       </div>
