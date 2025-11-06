@@ -678,5 +678,23 @@ export const celulares: Product[] = [
     category: "celulares",
     brand: "Xiaomi",
   },
+  // Redmi
+  {
+    id: "cel-95",
+    name: "REDMI NOTE 14 128GB",
+    price: 130,
+    image: "/images/redmi/redmi-note-14.jpg",
+    category: "celulares",
+    brand: "Redmi",
+  },
+  // Poco
+  {
+    id: "cel-96",
+    name: "POCO C75C 256GB",
+    price: 115,
+    image: "/images/xiaomi/poco-c74-black.jpg",
+    category: "celulares",
+    brand: "Poco",
+  },
 ];
 
