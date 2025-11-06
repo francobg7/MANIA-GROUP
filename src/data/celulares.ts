@@ -34,6 +34,46 @@ export const celulares: Product[] = [
     category: "celulares",
     brand: "Apple",
   },
+  {
+    id: "cel-84",
+    name: "IPHONE 17 PRO MAX 256GB ORANGE",
+    price: 1555,
+    image: "/images/iphone/17/17-pro-max-orange.jpg",
+    category: "celulares",
+    brand: "Apple",
+  },
+  {
+    id: "cel-85",
+    name: "IPHONE 17 PRO MAX 256GB BLUE",
+    price: 1555,
+    image: "/images/iphone/17/17-blue.jpg",
+    category: "celulares",
+    brand: "Apple",
+  },
+  {
+    id: "cel-86",
+    name: "IPHONE 17 PRO 256GB SILVER",
+    price: 1345,
+    image: "/images/iphone/17/17-promax-silver.jpg",
+    category: "celulares",
+    brand: "Apple",
+  },
+  {
+    id: "cel-87",
+    name: "IPHONE 17 PRO 256GB ORANGE",
+    price: 1345,
+    image: "/images/iphone/17/17-pro-max-orange.jpg",
+    category: "celulares",
+    brand: "Apple",
+  },
+  {
+    id: "cel-88",
+    name: "IPHONE 17 PRO 256GB BLUE",
+    price: 1345,
+    image: "/images/iphone/17/17-blue.jpg",
+    category: "celulares",
+    brand: "Apple",
+  },
   
   {
     id: "cel-14",
@@ -587,6 +627,23 @@ export const celulares: Product[] = [
     image: "/images/iphone/17/iphone-17-white.webp",
     category: "celulares",
     brand: "Apple",
+  },
+  // Samsung
+  {
+    id: "cel-89",
+    name: "GALAXY A16 128GB",
+    price: 120,
+    image: "/images/samsung/A16-256-galaxy.jpg",
+    category: "celulares",
+    brand: "Samsung",
+  },
+  {
+    id: "cel-90",
+    name: "GALAXY S25 ULTRA 256GB",
+    price: 920,
+    image: "/images/samsung/s24-ultra.jpg",
+    category: "celulares",
+    brand: "Samsung",
   },
 ];
 
