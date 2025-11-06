@@ -27,7 +27,7 @@ const BrandFilter = ({
 
   // Si showAppleSubmenu está activado, solo mostrar las marcas principales
   const mainBrands = showAppleSubmenu 
-    ? ["Apple", "Samsung", "Xiaomi"]
+    ? ["Apple", "Samsung", "Xiaomi", "Redmi", "Poco"]
     : brands;
 
   return (
