@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
 import { celulares } from "@/data/celulares";
@@ -6,6 +6,14 @@ import { celulares } from "@/data/celulares";
 const Celulares = () => {
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
   const [selectedSeries, setSelectedSeries] = useState<string | null>(null);
+  const productsSectionRef = useRef<HTMLDivElement>(null);
+
+  // Scroll a la sección de productos cuando cambia el filtro de serie o marca
+  useEffect(() => {
+    if (productsSectionRef.current) {
+      productsSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [selectedSeries, selectedBrand]);
 
   // Función para extraer la serie de iPhone del nombre del producto
   const getiPhoneSeries = (name: string): string | null => {
@@ -70,7 +78,7 @@ const Celulares = () => {
       </section>
 
       {/* Products Section */}
-      <div className="py-12">
+      <div ref={productsSectionRef} className="py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-6">
             <aside className="w-full lg:w-64 shrink-0">
