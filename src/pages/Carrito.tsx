@@ -12,18 +12,18 @@ const Carrito = () => {
   const handleWhatsAppOrder = () => {
     if (cart.length === 0) return;
 
-    let message = "🛍️ *Pedido desde MANIA GROUP*\n\n";
+    let message = " *Pedido desde MANIA GROUP*\n\n";
     
     cart.forEach((item) => {
-      message += `📦 *${item.name}*\n`;
+      message += ` - *${item.name}*\n`;
       message += `   Cantidad: ${item.quantity}\n`;
       message += `   Precio: ${formatUSD(item.price)}\n`;
       message += `   Subtotal: ${formatUSD(item.price * item.quantity)}\n\n`;
     });
 
-    message += `💰 *Total: ${formatUSD(getTotalPrice())}*`;
+    message += ` *Total: ${formatUSD(getTotalPrice())}*`;
 
-    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/595993070659?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
