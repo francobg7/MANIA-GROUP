@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
 import VapeBrandsGrid from "@/components/VapeBrandsGrid";
@@ -9,6 +9,14 @@ const Vapes = () => {
     (p) => !["Beats", "Google", "Nothing", "Samsung", "Sony", "Xiaomi", "JBL"].includes(p.brand)
   );
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+  const productsSectionRef = useRef<HTMLDivElement>(null);
+
+  // Scroll a la sección de productos cuando cambia el filtro de marca
+  useEffect(() => {
+    if (productsSectionRef.current) {
+      productsSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [selectedBrand]);
 
   const filteredProducts = selectedBrand
     ? vapes.filter((p) => p.brand === selectedBrand)
@@ -46,7 +54,7 @@ const Vapes = () => {
       </section>
 
       {/* Products Section */}
-      <div className="py-12 w-full">
+      <div ref={productsSectionRef} className="py-12 w-full">
         <div className="w-full px-4">
           <div className="flex flex-col lg:flex-row gap-6">
             <aside className="w-full lg:w-64 shrink-0">
