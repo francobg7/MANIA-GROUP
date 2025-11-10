@@ -35,8 +35,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
         />
       </div>
       <CardContent className="p-4">
-        <h3 className="font-semibold text-lg mb-2 line-clamp-1">{product.name}</h3>
-        <p className="text-2xl font-bold">{formatUSD(product.price)}</p>
+        <h3 className="font-semibold text-sm sm:text-base md:text-lg mb-2 line-clamp-2 sm:line-clamp-1">{product.name}</h3>
+        <p className="text-xl sm:text-2xl font-bold">{formatUSD(product.price)}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0 flex flex-col gap-3">
         <div className="flex items-center justify-center gap-2 w-full">
@@ -64,8 +64,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </Button>
         </div>
         <Button onClick={handleAddToCart} className="w-full">
-          <ShoppingCart className="mr-2 h-4 w-4" />
-          Agregar al carrito
+          <ShoppingCart className="sm:mr-2 h-4 w-4" />
+          <span className="hidden sm:inline">Agregar al carrito</span>
         </Button>
       </CardFooter>
     </Card>
