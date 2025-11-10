@@ -1,6 +1,4 @@
-import { MapPin, CreditCard, ShieldCheck, Headphones, CheckCircle2, Mail } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { MapPin, CreditCard, ShieldCheck, Headphones, CheckCircle2 } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -47,22 +45,22 @@ const Footer = () => {
               />
             </div>
             <p className="text-primary-foreground/80 text-sm max-w-sm">
-              Loja especializada em Eletrônicos, Celulares e Equipamentos de Som e Imagem.
+              Tienda especializada en Electrónicos, Celulares y Equipos de Sonido e Imagen.
             </p>
             <div className="mt-4 space-y-1 text-primary-foreground/75 text-sm">
               <p className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Ciudad del Este - PY</p>
-              <p>Horário: Seg a Sáb · 9:00 às 20:00</p>
+              <p>Horario: Lun a Sáb · 07:00 hs a 16:00 hs</p>
             </div>
           </div>
 
-          {/* Informações */}
+          {/* Información */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Informações</h4>
+            <h4 className="text-lg font-semibold mb-4">Información</h4>
             <ul className="space-y-2 text-primary-foreground/80 text-sm">
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4" /> Quem Somos</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4" /> Aceitamos PIX</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4" /> Contato</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4" /> Nossas Lojas</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4" /> Quiénes Somos</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4" /> Aceptamos PIX</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4" /> Contacto</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4" /> Nuestras Tiendas</li>
             </ul>
           </div>
 
@@ -78,19 +76,23 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Ubicación */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Junte-se ao nosso boletim</h4>
-            <p className="text-sm text-primary-foreground/80 mb-4">
-              Receba atualizações por e-mail sobre nossas ofertas especiais.
+            <h4 className="text-lg font-semibold mb-4">Ubicación</h4>
+            <a
+              href="https://www.google.com/maps?q=Camilo+Recalde+7000,+Cd.+del+Este+100134"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+            >
+              <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
+              <p className="text-sm">
+                Camilo Recalde 7000, Cd. del Este 100134
+              </p>
+            </a>
+            <p className="text-xs text-primary-foreground/60 mt-2">
+              Encontrános dentro de Shopping Santo Domingo
             </p>
-            <div className="flex gap-2">
-              <div className="relative flex-1">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-primary-foreground/60" />
-                <Input placeholder="Seu e-mail" className="pl-9 bg-background text-foreground" />
-              </div>
-              <Button className="shrink-0">Inscrever-se</Button>
-            </div>
           </div>
         </div>
 
@@ -106,7 +108,7 @@ const Footer = () => {
           </div>
 
           <p className="text-center text-primary-foreground/60 text-sm mt-6">
-            Copyright © {new Date().getFullYear()} MANIA GROUP. Todos os direitos reservados.
+            Copyright © {new Date().getFullYear()} MANIA GROUP. Todos los derechos reservados.
           </p>
         </div>
       </div>
