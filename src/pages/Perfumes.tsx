@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
 import { perfumes } from "@/data/perfumes";
 
 const Perfumes = () => {
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+  const productsSectionRef = useRef<HTMLDivElement>(null);
+
+  // Scroll a la sección de productos cuando cambia el filtro de marca
+  useEffect(() => {
+    if (productsSectionRef.current) {
+      productsSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [selectedBrand]);
 
   const filteredProducts = selectedBrand
     ? perfumes.filter((p) => p.brand === selectedBrand)
@@ -47,7 +55,7 @@ const Perfumes = () => {
       </section>
 
       {/* Products Section */}
-      <div className="py-12">
+      <div ref={productsSectionRef} className="py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-6">
             <aside className="w-full lg:w-64 shrink-0">
