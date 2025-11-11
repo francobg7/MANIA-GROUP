@@ -103,7 +103,7 @@ export const perfumes: Product[] = [
     id: "perf-13",
     name: "AL HARAMAIN L AVENTURE 100ML",
     price: 28,
-    image: "",
+    image: "/images/perfumes/alharamain/l-aventure.jpg",
     category: "perfumes",
     brand: "Al Haramain",
   },
