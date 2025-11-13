@@ -23,7 +23,7 @@ const CategorySection = ({ title, products, viewMoreLink }: CategorySectionProps
             </Button>
           </Link>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6 items-stretch">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
