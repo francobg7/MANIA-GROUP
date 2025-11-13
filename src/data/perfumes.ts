@@ -3,8 +3,8 @@ import { Product } from "@/contexts/CartContext";
 export const perfumes: Product[] = [
   {
     id: "perf-1",
-    name: "Dior Sauvage",
-    price: 145000,
+    name: "Dior Sauvage Eau de Parfum 100ml",
+    price: 94,
     image: "/images/perfumes/varios/sauvage-dior-eau.jpg",
     category: "perfumes",
     brand: "Dior",
