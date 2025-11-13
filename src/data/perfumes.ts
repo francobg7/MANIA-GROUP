@@ -12,7 +12,7 @@ export const perfumes: Product[] = [
   {
     id: "perf-2",
     name: "Chanel Bleu de Chanel",
-    price: 165000,
+    price: 150,
     image: "/images/perfumes/varios/bleu-chanel.webp",
     category: "perfumes",
     brand: "Chanel",
@@ -20,7 +20,7 @@ export const perfumes: Product[] = [
   {
     id: "perf-3",
     name: "YSL Y Eau de Parfum",
-    price: 139000,
+    price: 95,
     image: "/images/perfumes/varios/YSL-Y-EDP-MASC.jpg",
     category: "perfumes",
     brand: "Yves Saint Laurent",
@@ -28,7 +28,7 @@ export const perfumes: Product[] = [
   {
     id: "perf-4",
     name: "Paco Rabanne 1 Million",
-    price: 125000,
+    price: 51,
     image: "/images/perfumes/varios/pacco-1million.webp",
     category: "perfumes",
     brand: "Paco Rabanne",
@@ -36,7 +36,7 @@ export const perfumes: Product[] = [
   {
     id: "perf-5",
     name: "Carolina Herrera Good Girl",
-    price: 155000,
+    price: 78,
     image: "/images/perfumes/varios/ch-good-girl.webp",
     category: "perfumes",
     brand: "Carolina Herrera",
@@ -44,7 +44,7 @@ export const perfumes: Product[] = [
   {
     id: "perf-6",
     name: "Tom Ford Black Orchid",
-    price: 189000,
+    price: 135,
     image: "/images/perfumes/varios/tom-ford-orchid.jpg",
     category: "perfumes",
     brand: "Tom Ford",
@@ -52,15 +52,23 @@ export const perfumes: Product[] = [
   {
     id: "perf-7",
     name: "Versace Eros",
-    price: 119000,
+    price: 71,
     image: "/images/perfumes/varios/versace-eros-masc.webp",
+    category: "perfumes",
+    brand: "Versace",
+  },
+  {
+    id: "perf-33",
+    name: "Versace Eros Flame",
+    price: 53,
+    image: "/images/perfumes/varios/versace-eros-flame.jpg",
     category: "perfumes",
     brand: "Versace",
   },
   {
     id: "perf-8",
     name: "Armani Code",
-    price: 135000,
+    price: 81,
     image: "/images/perfumes/varios/armani-code.jpg",
     category: "perfumes",
     brand: "Giorgio Armani",
