@@ -26,7 +26,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <Card className="overflow-hidden hover-lift group">
+    <Card className="overflow-hidden hover-lift group flex flex-col h-full">
       <div className="aspect-square overflow-hidden bg-muted">
         <img
           src={product.image}
@@ -34,7 +34,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
         />
       </div>
-      <CardContent className="p-4">
+      <CardContent className="p-4 flex-grow flex flex-col">
         <h3 className="font-semibold text-sm sm:text-base md:text-lg mb-2 break-words">{product.name}</h3>
         <p className="text-xl sm:text-2xl font-bold">{formatUSD(product.price)}</p>
       </CardContent>
