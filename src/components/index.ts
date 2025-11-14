@@ -13,3 +13,5 @@ export { default as ImageMosaic } from './ImageMosaic';
 export { default as BannerImage } from './BannerImage';
 export { default as VapeBrandCard } from './VapeBrandCard';
 export { default as VapeBrandsGrid } from './VapeBrandsGrid';
+export { default as SEO } from './SEO';
+export { default as SecurityWrapper } from './SecurityWrapper';

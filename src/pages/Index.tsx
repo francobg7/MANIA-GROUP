@@ -1,6 +1,6 @@
 import HeroSlider from "@/components/HeroSlider";
 import CategorySection from "@/components/CategorySection";
-import { BrandMarquee, SectionDivider, ImageMosaic, BannerImage } from "@/components";
+import { BrandMarquee, SectionDivider, ImageMosaic, BannerImage, SEO } from "@/components";
 import { celulares } from "@/data/celulares";
 import { pods } from "@/data/pods";
 import { perfumes } from "@/data/perfumes";
@@ -62,38 +62,65 @@ const Index = () => {
     .filter(Boolean) as typeof pods;
   const perfumesDestacados = perfumes.slice(0, 5);
 
-  return (
-    <div className="min-h-screen">
-      <HeroSlider />
-      
-      <BrandMarquee />
-      
-      <div className="py-8">
-        <CategorySection
-          title="Celulares Destacados"
-          products={celularesDestacados}
-          viewMoreLink="/celulares"
-        />
-        
-        <SectionDivider />
-        
-        <CategorySection
-          title="Vapes Premium"
-          products={vapesPremium}
-          viewMoreLink="/vapes"
-        />
-        
-        <BannerImage src="/images/banner.jpg" />
-        
-        <CategorySection
-          title="Perfumes Exclusivos"
-          products={perfumesDestacados}
-          viewMoreLink="/perfumes"
-        />
-      </div>
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MANIA GROUP",
+    "url": "https://maniagroup.com.py",
+    "description": "Tienda online de celulares, auriculares y perfumes premium. Los mejores productos al mejor precio.",
+    "sameAs": [
+      "https://www.facebook.com/maniagroup",
+      "https://www.instagram.com/maniagroup"
+    ],
+    "offers": {
+      "@type": "AggregateOffer",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "category": ["Smartphones", "Audio Equipment", "Perfumes"]
+    }
+  };
 
-      <ImageMosaic />
-    </div>
+  return (
+    <>
+      <SEO
+        title="MANIA GROUP - Celulares, Pods y Perfumes Premium"
+        description="Descubre la mejor selección de smartphones, auriculares inalámbricos y perfumes de lujo. Productos originales con garantía y envío gratis."
+        keywords="celulares iPhone Samsung, pods auriculares wireless, perfumes originales, tienda online Colombia"
+        url="/"
+        structured_data={organizationSchema}
+      />
+      <div className="min-h-screen">
+        <HeroSlider />
+        
+        <BrandMarquee />
+        
+        <div className="py-8">
+          <CategorySection
+            title="Celulares Destacados"
+            products={celularesDestacados}
+            viewMoreLink="/celulares"
+          />
+          
+          <SectionDivider />
+          
+          <CategorySection
+            title="Vapes Premium"
+            products={vapesPremium}
+            viewMoreLink="/vapes"
+          />
+          
+          <BannerImage src="/images/banner.jpg" />
+          
+          <CategorySection
+            title="Perfumes Exclusivos"
+            products={perfumesDestacados}
+            viewMoreLink="/perfumes"
+          />
+        </div>
+
+        <ImageMosaic />
+      </div>
+    </>
   );
 };
 

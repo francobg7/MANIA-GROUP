@@ -42,10 +42,12 @@ const Elfbar40KSubcategory = ({
   };
 
   const handleQuantityInput = (productId: string, value: string) => {
-    const numValue = parseInt(value) || 1;
+    // Sanitize input to prevent injection attacks
+    const sanitizedValue = value.replace(/[^0-9]/g, '');
+    const numValue = parseInt(sanitizedValue) || 1;
     setQuantities((prev) => ({
       ...prev,
-      [productId]: Math.max(1, numValue),
+      [productId]: Math.max(1, Math.min(numValue, 999)), // Clamp between 1-999
     }));
   };
 

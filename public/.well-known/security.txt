@@ -1,0 +1,17 @@
+# Security Policy
+
+## Security.txt - RFC 9116
+
+Contact: security@maniagroup.com.py
+Expires: 2026-11-13T23:59:59.000Z
+Encryption: https://maniagroup.com.py/.well-known/pgp-key.asc
+Acknowledgments: https://maniagroup.com.py/security-acknowledgments
+Preferred-Languages: es, en
+Canonical: https://maniagroup.com.py/.well-known/security.txt
+
+# Security Measures
+- All inputs are sanitized and validated
+- Rate limiting is implemented
+- Bot detection and blocking is active
+- Content Security Policy is enforced
+- Security headers are implemented
