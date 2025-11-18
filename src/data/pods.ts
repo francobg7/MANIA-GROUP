@@ -304,8 +304,8 @@ export const pods: Product[] = [
   { id: "pod-46", name: "BLACK SHEEP 40K SWI STRAWBERRY KIWI+COLA LIME", price: 12.00, image: "/images/pods/blacksheep/40K/kiwi-lime.webp", category: "vapes", brand: "Black Sheep" },
  // { id: "pod-47", name: "BLACK SHEEP 40K SWI STRAWBERRY KIWI+FRESH MINT", price: 12.00, image: "/images/pods/blacksheep/40K/", category: "vapes", brand: "Black Sheep" },
   // Ignite - IGNITE V15 (2 productos)
-  { id: "pod-325", name: "IGNITE V15 BLUE RAZZ ICE", price: 2.50, image: "/images/pods/ignite/250.jpg", category: "vapes", brand: "Ignite" },
-  { id: "pod-326", name: "IGNITE V15 TOBACCO", price: 2.50, image: "/images/pods/ignite/250.jpg", category: "vapes", brand: "Ignite" },
+  { id: "pod-325", name: "IGNITE V15 BLUE RAZZ ICE", price: 2.50, image: "/images/pods/ignite/v15/blue.jpg", category: "vapes", brand: "Ignite" },
+  { id: "pod-326", name: "IGNITE V15 TOBACCO", price: 2.50, image: "/images/pods/ignite/v15/tobaco.webp", category: "vapes", brand: "Ignite" },
   // Ignite - IGNITE V80 (24 productos)
   { id: "pod-327", name: "IGNITE V80 BLACK BANANA ICE", price: 7.25, image: "/images/pods/ignite/250.jpg", category: "vapes", brand: "Ignite" },
   { id: "pod-328", name: "IGNITE V80 BLACK BLUEBERRY ICE", price: 7.25, image: "/images/pods/ignite/250.jpg", category: "vapes", brand: "Ignite" },
