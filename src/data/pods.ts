@@ -299,7 +299,7 @@ export const pods: Product[] = [
   { id: "pod-41", name: "BLACK SHEEP 40K SWI GRAPE+ENERGY DRINK", price: 12.00, image: "/images/pods/blacksheep/40K/energy.jpeg", category: "vapes", brand: "Black Sheep" },
   { id: "pod-42", name: "BLACK SHEEP 40K SWI GRAPE+GRAPE MANGO", price: 12.00, image: "/images/pods/blacksheep/40K/", category: "vapes", brand: "Black Sheep" },
   { id: "pod-43", name: "BLACK SHEEP 40K SWI GRAPE+MENTHOL", price: 12.00, image: "/images/pods/blacksheep/40K/grape-mentol.webp", category: "vapes", brand: "Black Sheep" },
-  { id: "pod-44", name: "BLACK SHEEP 40K SWI GRAPE+PASSION FRUIT", price: 12.00, image: "/images/pods/blacksheep/40K/", category: "vapes", brand: "Black Sheep" },
+  //{ id: "pod-44", name: "BLACK SHEEP 40K SWI GRAPE+PASSION FRUIT", price: 12.00, image: "/images/pods/blacksheep/40K/", category: "vapes", brand: "Black Sheep" },
   { id: "pod-45", name: "BLACK SHEEP 40K SWI PASSION FRUIT+STRAW WATERM", price: 12.00, image: "/images/pods/blacksheep/40K/passion-water.webp", category: "vapes", brand: "Black Sheep" },
   { id: "pod-46", name: "BLACK SHEEP 40K SWI STRAWBERRY KIWI+COLA LIME", price: 12.00, image: "/images/pods/blacksheep/40K/kiwi-lime.webp", category: "vapes", brand: "Black Sheep" },
  // { id: "pod-47", name: "BLACK SHEEP 40K SWI STRAWBERRY KIWI+FRESH MINT", price: 12.00, image: "/images/pods/blacksheep/40K/", category: "vapes", brand: "Black Sheep" },
