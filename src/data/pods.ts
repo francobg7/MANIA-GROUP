@@ -219,9 +219,9 @@ export const pods: Product[] = [
   { id: "pod-578", name: "LOST MARY DURA 35K SUMMER ORANGE", price: 9.50, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
   { id: "pod-579", name: "LOST MARY DURA 35K WATERMELON ICE", price: 9.50, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
   // Lost Mary - LOST MARY MIXER 30K (3 productos)
-  { id: "pod-580", name: "LOST MARY MIXER 30K ALO GRAPE SOUR AP", price: 9.00, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
-  { id: "pod-581", name: "LOST MARY MIXER 30K GRAPEFRUIT LEMON LI", price: 9.00, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
-  { id: "pod-582", name: "LOST MARY MIXER 30K MIAMI CHILL", price: 9.00, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
+  { id: "pod-580", name: "LOST MARY MIXER 30K ALO GRAPE SOUR APPLE", price: 9.00, image: "/images/pods/lostmary/mixer/sour.webp", category: "vapes", brand: "Lost Mary" },
+  { id: "pod-581", name: "LOST MARY MIXER 30K GRAPEFRUIT LEMON LIME", price: 9.00, image: "/images/pods/lostmary/mixer/lemon.png", category: "vapes", brand: "Lost Mary" },
+  { id: "pod-582", name: "LOST MARY MIXER 30K MIAMI CHILL", price: 9.00, image: "/images/pods/lostmary/mixer/miami.webp", category: "vapes", brand: "Lost Mary" },
   // Lost Mary - LOST MARY MO 20K MEGA (5 productos)
   { id: "pod-583", name: "LOST MARY MO 20K MEGA ICE MINT", price: 6.50, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
   { id: "pod-584", name: "LOST MARY MO 20K MEGA KIWI PASSION GUAVA", price: 6.50, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
