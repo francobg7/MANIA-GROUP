@@ -223,11 +223,11 @@ export const pods: Product[] = [
   { id: "pod-581", name: "LOST MARY MIXER 30K GRAPEFRUIT LEMON LIME", price: 9.00, image: "/images/pods/lostmary/mixer/lemon.png", category: "vapes", brand: "Lost Mary" },
   { id: "pod-582", name: "LOST MARY MIXER 30K MIAMI CHILL", price: 9.00, image: "/images/pods/lostmary/mixer/miami.webp", category: "vapes", brand: "Lost Mary" },
   // Lost Mary - LOST MARY MO 20K MEGA (5 productos)
-  { id: "pod-583", name: "LOST MARY MO 20K MEGA ICE MINT", price: 6.50, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
-  { id: "pod-584", name: "LOST MARY MO 20K MEGA KIWI PASSION GUAVA", price: 6.50, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
-  { id: "pod-585", name: "LOST MARY MO 20K MEGA LIME GRAEPFRUIT", price: 6.50, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
-  { id: "pod-586", name: "LOST MARY MO 20K MEGA MENTHOL", price: 6.50, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
-  { id: "pod-587", name: "LOST MARY MO 20K MEGA PURE ICE", price: 6.50, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
+  { id: "pod-583", name: "LOST MARY MO 20K MEGA ICE MINT", price: 6.50, image: "/images/pods/lostmary/20k/mint.webp", category: "vapes", brand: "Lost Mary" },
+  { id: "pod-584", name: "LOST MARY MO 20K MEGA KIWI PASSION GUAVA", price: 6.50, image: "/images/pods/lostmary/20k/guava.webp", category: "vapes", brand: "Lost Mary" },
+  { id: "pod-585", name: "LOST MARY MO 20K MEGA LIME GRAPEFRUIT", price: 6.50, image: "/images/pods/lostmary/20k/grape.png", category: "vapes", brand: "Lost Mary" },
+  { id: "pod-586", name: "LOST MARY MO 20K MEGA MENTHOL", price: 6.50, image: "/images/pods/lostmary/20k/mentol.jpg", category: "vapes", brand: "Lost Mary" },
+  { id: "pod-587", name: "LOST MARY MO 20K MEGA PURE ICE", price: 6.50, image: "/images/pods/lostmary/20k/ice.webp", category: "vapes", brand: "Lost Mary" },
   // Lost Mary - LOST MARY MT 35K (12 productos)
   { id: "pod-588", name: "LOST MARY MT 35K BAJA SPLAH", price: 9.50, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
   { id: "pod-589", name: "LOST MARY MT 35K BANANA ICE", price: 9.50, image: "/images/pods/ignite.jpg", category: "vapes", brand: "Lost Mary" },
