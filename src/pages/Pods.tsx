@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
 import VapeBrandsGrid from "@/components/VapeBrandsGrid";
+import VapeDisclaimer from "@/components/VapeDisclaimer";
+import AgeVerificationModal from "@/components/AgeVerificationModal";
 import { pods } from "@/data/pods";
 
 const Vapes = () => {
@@ -9,7 +11,39 @@ const Vapes = () => {
     (p) => !["Beats", "Google", "Nothing", "Samsung", "Sony", "Xiaomi", "JBL"].includes(p.brand)
   );
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+  const [isVerified, setIsVerified] = useState(false);
+  const [showVerificationModal, setShowVerificationModal] = useState(false);
   const productsSectionRef = useRef<HTMLDivElement>(null);
+
+  // Check age verification on component mount
+  useEffect(() => {
+    const checkAgeVerification = () => {
+      try {
+        const stored = localStorage.getItem('vapeAgeVerification');
+        if (stored) {
+          const data = JSON.parse(stored);
+          const now = Date.now();
+          
+          // Check if verification is still valid (not expired)
+          if (data.verified && data.expires > now) {
+            setIsVerified(true);
+          } else {
+            // Verification expired, clear it
+            localStorage.removeItem('vapeAgeVerification');
+            setShowVerificationModal(true);
+          }
+        } else {
+          // No verification found
+          setShowVerificationModal(true);
+        }
+      } catch (error) {
+        console.error('Error checking age verification:', error);
+        setShowVerificationModal(true);
+      }
+    };
+
+    checkAgeVerification();
+  }, []);
 
   // Scroll a la sección de productos cuando cambia el filtro de marca
   useEffect(() => {
@@ -18,12 +52,43 @@ const Vapes = () => {
     }
   }, [selectedBrand]);
 
+  const handleVerified = () => {
+    setIsVerified(true);
+    setShowVerificationModal(false);
+  };
+
+  const handleDeclined = () => {
+    // Redirect to homepage or external site
+    window.location.href = '/';
+  };
+
   const filteredProducts = selectedBrand
     ? vapes.filter((p) => p.brand === selectedBrand)
     : vapes;
 
   // Siempre usar la vista agrupada por marcas para vapes
   const useBrandsView = true;
+
+  // Show loading or verification modal if not verified
+  if (!isVerified) {
+    return (
+      <>
+        <AgeVerificationModal
+          isOpen={showVerificationModal}
+          onVerified={handleVerified}
+          onDeclined={handleDeclined}
+        />
+        {!showVerificationModal && (
+          <div className="min-h-screen flex items-center justify-center bg-gray-50">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto mb-4"></div>
+              <p className="text-gray-600">Verificando acceso...</p>
+            </div>
+          </div>
+        )}
+      </>
+    );
+  }
 
   return (
     <div className="min-h-screen">
@@ -87,6 +152,9 @@ const Vapes = () => {
           </div>
         </div>
       </div>
+
+      {/* Disclaimer Section */}
+      <VapeDisclaimer />
     </div>
   );
 };
