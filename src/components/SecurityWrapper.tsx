@@ -1,6 +1,5 @@
 import React, { ReactNode, useEffect } from 'react';
 import { useBotProtection, useSecurityMonitoring } from '@/hooks/useSecurity';
-import { SECURITY_HEADERS } from '@/config/security';
 
 interface SecurityWrapperProps {
   children: ReactNode;
@@ -11,23 +10,10 @@ const SecurityWrapper: React.FC<SecurityWrapperProps> = ({ children }) => {
   const { logSecurityEvent } = useSecurityMonitoring();
 
   useEffect(() => {
-    // Set security headers (for client-side, mainly for documentation)
-    // Note: Real security headers should be set by the server
-    if (typeof document !== 'undefined') {
-      // Add CSP meta tag if not already present
-      const existingCSP = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
-      if (!existingCSP) {
-        const cspMeta = document.createElement('meta');
-        cspMeta.setAttribute('http-equiv', 'Content-Security-Policy');
-        cspMeta.setAttribute('content', SECURITY_HEADERS['Content-Security-Policy']);
-        document.head.appendChild(cspMeta);
-      }
-    }
-
     // Log security initialization
     logSecurityEvent('Security system initialized');
 
-    // Detect and prevent common attacks
+    // Detect and prevent common attacks for suspicious users
     const preventRightClick = (e: MouseEvent) => {
       if (isBot) {
         e.preventDefault();
@@ -46,14 +32,18 @@ const SecurityWrapper: React.FC<SecurityWrapperProps> = ({ children }) => {
       }
     };
 
+    // Only add event listeners if user is detected as bot
     if (isBot) {
       document.addEventListener('contextmenu', preventRightClick);
       document.addEventListener('keydown', preventKeyboardShortcuts);
     }
 
+    // Cleanup event listeners
     return () => {
-      document.removeEventListener('contextmenu', preventRightClick);
-      document.removeEventListener('keydown', preventKeyboardShortcuts);
+      if (isBot) {
+        document.removeEventListener('contextmenu', preventRightClick);
+        document.removeEventListener('keydown', preventKeyboardShortcuts);
+      }
     };
   }, [isBot, logSecurityEvent]);
 
