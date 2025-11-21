@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
-import VapeBrandsGrid from "@/components/VapeBrandsGrid";
 import VapeDisclaimer from "@/components/VapeDisclaimer";
 import AgeVerificationModal from "@/components/AgeVerificationModal";
+import Pagination from "@/components/Pagination";
 import { pods } from "@/data/pods";
 
 const Vapes = () => {
@@ -13,7 +13,11 @@ const Vapes = () => {
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
   const [isVerified, setIsVerified] = useState(false);
   const [showVerificationModal, setShowVerificationModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
   const productsSectionRef = useRef<HTMLDivElement>(null);
+
+  // Configuración de paginación
+  const PRODUCTS_PER_PAGE = 12;
 
   // Check age verification on component mount
   useEffect(() => {
@@ -66,8 +70,23 @@ const Vapes = () => {
     ? vapes.filter((p) => p.brand === selectedBrand)
     : vapes;
 
-  // Siempre usar la vista agrupada por marcas para vapes
-  const useBrandsView = true;
+  // Cálculos para paginación
+  const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+  const endIndex = startIndex + PRODUCTS_PER_PAGE;
+  const currentPageProducts = filteredProducts.slice(startIndex, endIndex);
+
+  // Resetear página actual cuando cambia el filtro
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedBrand]);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    if (productsSectionRef.current) {
+      productsSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   // Show loading or verification modal if not verified
   if (!isVerified) {
@@ -130,23 +149,33 @@ const Vapes = () => {
               />
             </aside>
             <div className="flex-1 w-full">
-              {useBrandsView ? (
-                // Vista agrupada por marcas
-                <VapeBrandsGrid products={filteredProducts} />
-              ) : (
-                // Vista de grid tradicional para pocos productos
-                <>
-                  <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 items-stretch">
-                    {filteredProducts.map((product) => (
-                      <ProductCard key={product.id} product={product} />
-                    ))}
-                  </div>
-                  {filteredProducts.length === 0 && (
-                    <p className="text-center text-muted-foreground py-12">
-                      No se encontraron productos de esta marca
-                    </p>
-                  )}
-                </>
+              {/* Información de productos */}
+              <div className="flex justify-end items-center mb-6">
+                <div className="text-sm text-gray-600">
+                  Mostrando {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)} de {filteredProducts.length} productos
+                </div>
+              </div>
+
+              {/* Vista de tarjetas con paginación */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 items-stretch">
+                {currentPageProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+              
+              {filteredProducts.length === 0 && (
+                <p className="text-center text-muted-foreground py-12">
+                  No se encontraron productos de esta marca
+                </p>
+              )}
+
+              {/* Paginación */}
+              {filteredProducts.length > 0 && (
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={handlePageChange}
+                />
               )}
             </div>
           </div>
