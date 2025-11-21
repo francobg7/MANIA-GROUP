@@ -15,3 +15,5 @@ export { default as VapeBrandCard } from './VapeBrandCard';
 export { default as VapeBrandsGrid } from './VapeBrandsGrid';
 export { default as SEO } from './SEO';
 export { default as SecurityWrapper } from './SecurityWrapper';
+export { default as AgeVerificationModal } from './AgeVerificationModal';
+export { default as VapeDisclaimer } from './VapeDisclaimer';

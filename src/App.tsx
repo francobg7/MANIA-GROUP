@@ -35,11 +35,11 @@ const App = () => (
                 </Routes>
               </main>
               <Footer />
-            </div>            </BrowserRouter>
-        </CartProvider>
-      </TooltipProvider>
-    </QueryClientProvider>
-    </HelmetProvider>
+            </div>              </BrowserRouter>
+            </CartProvider>
+          </TooltipProvider>
+        </QueryClientProvider>
+      </HelmetProvider>
     </SecurityWrapper>
   </ErrorBoundary>
 );
