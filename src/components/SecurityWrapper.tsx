@@ -57,7 +57,7 @@ const SecurityWrapper: React.FC<SecurityWrapperProps> = ({ children }) => {
             Your request has been blocked for security reasons.
           </p>
           <p className="text-sm text-gray-500 mt-2">
-            If you believe this is an error, please contact support.
+            If you believe this is an error, please contact support..
           </p>
         </div>
       </div>
