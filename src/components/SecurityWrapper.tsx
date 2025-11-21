@@ -1,6 +1,5 @@
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode, useEffect, useCallback, useRef } from 'react';
 import { useBotProtection, useSecurityMonitoring } from '@/hooks/useSecurity';
-import { SECURITY_HEADERS } from '@/config/security';
 
 interface SecurityWrapperProps {
   children: ReactNode;
@@ -9,53 +8,57 @@ interface SecurityWrapperProps {
 const SecurityWrapper: React.FC<SecurityWrapperProps> = ({ children }) => {
   const { isBot, isBlocked } = useBotProtection();
   const { logSecurityEvent } = useSecurityMonitoring();
+  const initialized = useRef(false);
+
+  // Memoized event handlers to prevent unnecessary re-renders
+  const preventRightClick = useCallback((e: MouseEvent) => {
+    if (isBot) {
+      e.preventDefault();
+      // Only log in development mode to reduce noise
+      if (process.env.NODE_ENV === 'development') {
+        logSecurityEvent('Right-click blocked for suspicious user');
+      }
+    }
+  }, [isBot, logSecurityEvent]);
+
+  const preventKeyboardShortcuts = useCallback((e: KeyboardEvent) => {
+    // Block common developer tools shortcuts for bots
+    if (isBot && (
+      (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J')) ||
+      e.key === 'F12'
+    )) {
+      e.preventDefault();
+      // Only log in development mode to reduce noise
+      if (process.env.NODE_ENV === 'development') {
+        logSecurityEvent('Developer tools access blocked for suspicious user');
+      }
+    }
+  }, [isBot, logSecurityEvent]);
 
   useEffect(() => {
-    // Set security headers (for client-side, mainly for documentation)
-    // Note: Real security headers should be set by the server
-    if (typeof document !== 'undefined') {
-      // Add CSP meta tag if not already present
-      const existingCSP = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
-      if (!existingCSP) {
-        const cspMeta = document.createElement('meta');
-        cspMeta.setAttribute('http-equiv', 'Content-Security-Policy');
-        cspMeta.setAttribute('content', SECURITY_HEADERS['Content-Security-Policy']);
-        document.head.appendChild(cspMeta);
+    // Initialize security only once
+    if (!initialized.current) {
+      initialized.current = true;
+      
+      // Log security initialization only in development
+      if (process.env.NODE_ENV === 'development') {
+        logSecurityEvent('Security system initialized');
       }
     }
 
-    // Log security initialization
-    logSecurityEvent('Security system initialized');
-
-    // Detect and prevent common attacks
-    const preventRightClick = (e: MouseEvent) => {
-      if (isBot) {
-        e.preventDefault();
-        logSecurityEvent('Right-click blocked for suspicious user');
-      }
-    };
-
-    const preventKeyboardShortcuts = (e: KeyboardEvent) => {
-      // Block common developer tools shortcuts for bots
-      if (isBot && (
-        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J')) ||
-        e.key === 'F12'
-      )) {
-        e.preventDefault();
-        logSecurityEvent('Developer tools access blocked for suspicious user');
-      }
-    };
-
+    // Add event listeners only for detected bots
     if (isBot) {
-      document.addEventListener('contextmenu', preventRightClick);
-      document.addEventListener('keydown', preventKeyboardShortcuts);
+      document.addEventListener('contextmenu', preventRightClick, { passive: false });
+      document.addEventListener('keydown', preventKeyboardShortcuts, { passive: false });
     }
 
     return () => {
-      document.removeEventListener('contextmenu', preventRightClick);
-      document.removeEventListener('keydown', preventKeyboardShortcuts);
+      if (isBot) {
+        document.removeEventListener('contextmenu', preventRightClick);
+        document.removeEventListener('keydown', preventKeyboardShortcuts);
+      }
     };
-  }, [isBot, logSecurityEvent]);
+  }, [isBot, preventRightClick, preventKeyboardShortcuts, logSecurityEvent]);
 
   // Block access for detected malicious bots
   if (isBlocked) {
