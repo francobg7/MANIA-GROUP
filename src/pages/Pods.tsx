@@ -5,6 +5,50 @@ import VapeDisclaimer from "@/components/VapeDisclaimer";
 import AgeVerificationModal from "@/components/AgeVerificationModal";
 import Pagination from "@/components/Pagination";
 import { pods } from "@/data/pods";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import PodsSubdivisionFilter from "@/components/PodsSubdivisionFilter";
+
+// Subdivisiones por marca
+const BRAND_SUBDIVISIONS: Record<string, { key: string; label: string }[]> = {
+  "Lost Mary": [
+    { key: "DURA 35K", label: "DURA 35K" },
+    { key: "MIXER 30K", label: "MIXER 30K" },
+    { key: "MO 20K", label: "MO 20K" },
+    { key: "MT 35K", label: "MT 35K" },
+  ],
+  "Ignite": [
+    { key: "V15", label: "V15" },
+    { key: "V80", label: "V80" },
+    { key: "V120", label: "V120" },
+    { key: "V150", label: "V150" },
+    { key: "V250", label: "V250" },
+    { key: "V300", label: "V300" },
+    { key: "V400", label: "V400" },
+  ],
+  "Geek Bar": [
+    { key: "Z35K", label: "Z35K" },
+    { key: "25K", label: "25K" },
+  ],
+  "Elf Bar": [
+    { key: "BC 15K", label: "BC 15K" },
+    { key: "BC 20000K TOUCH", label: "BC 20000K TOUCH" },
+    { key: "GH 23000", label: "GH 23000" },
+    { key: "TE 30K", label: "TE 30K" },
+    { key: "40K", label: "40K" },
+  ],
+  "Black Sheep": [
+    { key: "15K", label: "15K" },
+    { key: "30K", label: "30K" },
+    { key: "40K", label: "40K" },
+  ],
+  "Life Pod": [
+    { key: "40K", label: "40K" },
+    { key: "ECO DEVICE", label: "ECO DEVICE" },
+    { key: "ECO II KIT", label: "ECO II KIT" },
+    { key: "ECO II REFIL", label: "ECO II REFIL" },
+    { key: "ECO SK KIT", label: "ECO SK KIT" },
+  ],
+};
 
 const Vapes = () => {
   const vapes = pods.filter(
@@ -15,6 +59,7 @@ const Vapes = () => {
   const [showVerificationModal, setShowVerificationModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const productsSectionRef = useRef<HTMLDivElement>(null);
+  const [subdivision, setSubdivision] = useState<string>("");
 
   // Configuración de paginación
   const PRODUCTS_PER_PAGE = 12;
@@ -56,6 +101,15 @@ const Vapes = () => {
     }
   }, [selectedBrand]);
 
+  // Cuando cambia la marca seleccionada, setear subdivision a la primera opción si existe
+  useEffect(() => {
+    if (selectedBrand && BRAND_SUBDIVISIONS[selectedBrand]) {
+      setSubdivision(BRAND_SUBDIVISIONS[selectedBrand][0].key);
+    } else {
+      setSubdivision("");
+    }
+  }, [selectedBrand]);
+
   const handleVerified = () => {
     setIsVerified(true);
     setShowVerificationModal(false);
@@ -66,8 +120,21 @@ const Vapes = () => {
     window.location.href = '/';
   };
 
+  const hasSubdivisions = selectedBrand && BRAND_SUBDIVISIONS[selectedBrand];
+
   const filteredProducts = selectedBrand
-    ? vapes.filter((p) => p.brand === selectedBrand)
+    ? hasSubdivisions
+      ? vapes.filter((p) => {
+          const brandKey = selectedBrand.replace(/\s+/g, "").toLowerCase();
+          const nameKey = p.name.replace(/\s+/g, "").toLowerCase();
+          const subdivisionKey = subdivision.replace(/\s+/g, "").toLowerCase();
+          return (
+            p.brand === selectedBrand &&
+            nameKey.includes(brandKey) &&
+            nameKey.includes(subdivisionKey)
+          );
+        })
+      : vapes.filter((p) => p.brand === selectedBrand)
     : vapes;
 
   // Cálculos para paginación
@@ -149,6 +216,14 @@ const Vapes = () => {
               />
             </aside>
             <div className="flex-1 w-full">
+              {/* Filtro de subdivisiones reutilizable para todas las marcas */}
+              {hasSubdivisions && (
+                <PodsSubdivisionFilter
+                  subdivisions={BRAND_SUBDIVISIONS[selectedBrand]}
+                  selected={subdivision}
+                  onSelect={setSubdivision}
+                />
+              )}
               {/* Información de productos */}
               <div className="flex justify-end items-center mb-6">
                 <div className="text-sm text-gray-600">
