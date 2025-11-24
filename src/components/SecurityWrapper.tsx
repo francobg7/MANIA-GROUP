@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode, useEffect, useCallback, useRef } from 'react';
 import { useBotProtection, useSecurityMonitoring } from '@/hooks/useSecurity';
 
 interface SecurityWrapperProps {
@@ -8,44 +8,57 @@ interface SecurityWrapperProps {
 const SecurityWrapper: React.FC<SecurityWrapperProps> = ({ children }) => {
   const { isBot, isBlocked } = useBotProtection();
   const { logSecurityEvent } = useSecurityMonitoring();
+  const initialized = useRef(false);
 
-  useEffect(() => {
-    // Log security initialization
-    logSecurityEvent('Security system initialized');
-
-    // Detect and prevent common attacks for suspicious users
-    const preventRightClick = (e: MouseEvent) => {
-      if (isBot) {
-        e.preventDefault();
+  // Memoized event handlers to prevent unnecessary re-renders
+  const preventRightClick = useCallback((e: MouseEvent) => {
+    if (isBot) {
+      e.preventDefault();
+      // Only log in development mode to reduce noise
+      if (process.env.NODE_ENV === 'development') {
         logSecurityEvent('Right-click blocked for suspicious user');
       }
-    };
+    }
+  }, [isBot, logSecurityEvent]);
 
-    const preventKeyboardShortcuts = (e: KeyboardEvent) => {
-      // Block common developer tools shortcuts for bots
-      if (isBot && (
-        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J')) ||
-        e.key === 'F12'
-      )) {
-        e.preventDefault();
+  const preventKeyboardShortcuts = useCallback((e: KeyboardEvent) => {
+    // Block common developer tools shortcuts for bots
+    if (isBot && (
+      (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J')) ||
+      e.key === 'F12'
+    )) {
+      e.preventDefault();
+      // Only log in development mode to reduce noise
+      if (process.env.NODE_ENV === 'development') {
         logSecurityEvent('Developer tools access blocked for suspicious user');
       }
-    };
+    }
+  }, [isBot, logSecurityEvent]);
 
-    // Only add event listeners if user is detected as bot
-    if (isBot) {
-      document.addEventListener('contextmenu', preventRightClick);
-      document.addEventListener('keydown', preventKeyboardShortcuts);
+  useEffect(() => {
+    // Initialize security only once
+    if (!initialized.current) {
+      initialized.current = true;
+      
+      // Log security initialization only in development
+      if (process.env.NODE_ENV === 'development') {
+        logSecurityEvent('Security system initialized');
+      }
     }
 
-    // Cleanup event listeners
+    // Add event listeners only for detected bots
+    if (isBot) {
+      document.addEventListener('contextmenu', preventRightClick, { passive: false });
+      document.addEventListener('keydown', preventKeyboardShortcuts, { passive: false });
+    }
+
     return () => {
       if (isBot) {
         document.removeEventListener('contextmenu', preventRightClick);
         document.removeEventListener('keydown', preventKeyboardShortcuts);
       }
     };
-  }, [isBot, logSecurityEvent]);
+  }, [isBot, preventRightClick, preventKeyboardShortcuts, logSecurityEvent]);
 
   // Block access for detected malicious bots
   if (isBlocked) {

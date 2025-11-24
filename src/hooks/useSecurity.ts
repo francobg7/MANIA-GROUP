@@ -12,8 +12,10 @@ export const useBotProtection = () => {
     
     if (botDetected) {
       setIsBot(true);
-      // Log suspicious activity
-      console.warn('Potential bot detected:', userAgent);
+      // Log suspicious activity only in development mode
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Potential bot detected:', userAgent);
+      }
       
       // Block after multiple bot-like behaviors
       const botKey = `bot_${userAgent.slice(0, 20)}`;
@@ -123,7 +125,11 @@ export const useSecurityMonitoring = () => {
     const logEntry = `${timestamp}: ${event}`;
     
     setSecurityEvents(prev => [...prev.slice(-9), logEntry]); // Keep last 10 events
-    console.warn('Security Event:', logEntry);
+    
+    // Only log to console in development mode to reduce production noise
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Security Event:', logEntry);
+    }
   }, []);
 
   const clearSecurityLogs = useCallback(() => {

@@ -47,10 +47,10 @@ export const SECURITY_CONFIG = {
   // Input validation patterns
   VALIDATION_PATTERNS: {
     EMAIL: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-    PHONE: /^[\+]?[1-9][\d]{0,15}$/,
+    PHONE: /^[+]?[1-9][\d]{0,15}$/,
     NAME: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{2,50}$/,
-    SEARCH_QUERY: /^[a-zA-Z0-9\s\-_áéíóúñÑ]{1,100}$/,
-    PRODUCT_ID: /^[a-zA-Z0-9\-_]{1,50}$/,
+    SEARCH_QUERY: /^[a-zA-Z0-9\s_áéíóúñÑ-]{1,100}$/,
+    PRODUCT_ID: /^[a-zA-Z0-9_-]{1,50}$/,
     QUANTITY: /^[1-9]\d{0,2}$/ // 1-999
   }
 };

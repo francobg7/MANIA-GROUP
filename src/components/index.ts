@@ -17,3 +17,4 @@ export { default as SEO } from './SEO';
 export { default as SecurityWrapper } from './SecurityWrapper';
 export { default as AgeVerificationModal } from './AgeVerificationModal';
 export { default as VapeDisclaimer } from './VapeDisclaimer';
+export { default as Pagination } from './Pagination';
