@@ -10,28 +10,28 @@ const images = [
     src: 'images/pods/banner-nomad.gif',
     title: 'Vapes BlackSheep',
     description: 'Vapes Premium',
-    price: 'A partir de U$ 10,50',
+    price: 'A partir de U$ 6,80',
     category: 'Vapes'
   },
   {
     src: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80',
-    title: 'Dior Sauvage',
+    title: 'Chanel N° 5 Eau de Parfum',
     description: 'Fragancia fresca y especiada para el hombre moderno',
-    price: 'U$ 1.450,00',
+    price: 'U$ 158,00',
     category: 'Perfumes'
   },
   {
     src: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800&q=80',
     title: 'Samsung Galaxy S24 Ultra',
     description: 'IA integrada y cámara profesional de 200MP',
-    price: 'U$ 11.990,00',
+    price: 'U$ 790,00',
     category: 'Celulares'
   },
   {
-    src: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&q=80',
-    title: 'YSL Y Eau de Parfum',
-    description: 'Fragancia intensa y fresca para ocasiones especiales',
-    price: 'U$ 1.390,00',
+    src: '/images/perfumes/lataffa/lattafa-khamrah-edp.webp',
+    title: 'Perfume Lattafa Khamrah Edp Unissex 100ML',
+    description: 'Fragancia intensa y dulce para ocasiones especiales',
+    price: 'U$ 28,00',
     category: 'Perfumes'
   },
   
