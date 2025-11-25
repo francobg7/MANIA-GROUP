@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
 import VapeDisclaimer from "@/components/VapeDisclaimer";
@@ -60,6 +61,9 @@ const Vapes = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsSectionRef = useRef<HTMLDivElement>(null);
   const [subdivision, setSubdivision] = useState<string>("");
+  const location = useLocation();
+  const [highlightedId, setHighlightedId] = useState<string | null>(null);
+  const productRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   // Configuración de paginación
   const PRODUCTS_PER_PAGE = 12;
@@ -110,6 +114,45 @@ const Vapes = () => {
     }
   }, [selectedBrand]);
 
+  // Detectar highlight param en la URL
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const highlight = params.get("highlight");
+    if (highlight) {
+      setHighlightedId(highlight);
+      setTimeout(() => {
+        const el = productRefs.current[highlight];
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 300);
+    } else {
+      setHighlightedId(null);
+    }
+  }, [location.search]);
+
+  // Cuando hay un highlight, filtrar automáticamente por la marca y subdivisión del producto
+  useEffect(() => {
+    if (highlightedId) {
+      const product = vapes.find((p) => p.id === highlightedId);
+      if (product) {
+        setSelectedBrand(product.brand);
+        // Buscar subdivisión si corresponde
+        if (BRAND_SUBDIVISIONS[product.brand]) {
+          const foundSubdivision = BRAND_SUBDIVISIONS[product.brand].find(sub => product.name.toLowerCase().includes(sub.key.toLowerCase()));
+          if (foundSubdivision) {
+            setSubdivision(foundSubdivision.key);
+          }
+        }
+      }
+    }
+  }, [highlightedId]);
+
+  // Resetear página actual cuando cambia el filtro o la subdivisión
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedBrand, subdivision]);
+
   const handleVerified = () => {
     setIsVerified(true);
     setShowVerificationModal(false);
@@ -142,11 +185,6 @@ const Vapes = () => {
   const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
   const endIndex = startIndex + PRODUCTS_PER_PAGE;
   const currentPageProducts = filteredProducts.slice(startIndex, endIndex);
-
-  // Resetear página actual cuando cambia el filtro
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [selectedBrand]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -234,7 +272,13 @@ const Vapes = () => {
               {/* Vista de tarjetas con paginación */}
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 items-stretch">
                 {currentPageProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                  <div
+                    key={product.id}
+                    ref={el => (productRefs.current[product.id] = el)}
+                    className={highlightedId === product.id ? "ring-4 ring-blue-400 rounded-lg transition-all" : ""}
+                  >
+                    <ProductCard product={product} />
+                  </div>
                 ))}
               </div>
               
