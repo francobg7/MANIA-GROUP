@@ -12,10 +12,10 @@ import PodsSubdivisionFilter from "@/components/PodsSubdivisionFilter";
 // Subdivisiones por marca
 const BRAND_SUBDIVISIONS: Record<string, { key: string; label: string }[]> = {
   "Lost Mary": [
-    { key: "DURA 35K", label: "DURA 35K" },
+    { key: "MT 35K", label: "MT 35K" },
     { key: "MIXER 30K", label: "MIXER 30K" },
     { key: "MO 20K", label: "MO 20K" },
-    { key: "MT 35K", label: "MT 35K" },
+    { key: "DURA 35K", label: "DURA 35K" },
   ],
   "Ignite": [
     { key: "V15", label: "V15" },
