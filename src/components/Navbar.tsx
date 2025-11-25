@@ -83,7 +83,7 @@ const Navbar = () => {
                 {searchResults.map((product) => (
                   <Link
                     key={product.id}
-                    to={`/${product.category}`}
+                    to={`/${product.category}?highlight=${product.id}`}
                     className="flex items-center gap-3 p-3 hover:bg-accent smooth-transition"
                     onClick={() => {
                       setSearchQuery("");
