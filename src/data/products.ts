@@ -9,3 +9,5 @@ export const products: Product[] = [
   ...pods,
   ...perfumes,
 ];
+// Ya que perfumes se importa y se expande, los productos de Jean Paul Gaultier ya están incluidos automáticamente si están en perfumes.ts
+// No se requiere cambio adicional aquí, pero si se agregan dinámicamente, asegurarse de que perfumes esté actualizado.
