@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
 import { perfumes } from "@/data/perfumes";
@@ -6,6 +7,9 @@ import { perfumes } from "@/data/perfumes";
 const Perfumes = () => {
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
   const productsSectionRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const [highlightedId, setHighlightedId] = useState<string | null>(null);
+  const productRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   // Scroll a la sección de productos cuando cambia el filtro de marca
   useEffect(() => {
@@ -13,6 +17,33 @@ const Perfumes = () => {
       productsSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [selectedBrand]);
+
+  // Detectar highlight param en la URL
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const highlight = params.get("highlight");
+    if (highlight) {
+      setHighlightedId(highlight);
+      setTimeout(() => {
+        const el = productRefs.current[highlight];
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 300);
+    } else {
+      setHighlightedId(null);
+    }
+  }, [location.search]);
+
+  // Cuando hay un highlight, filtrar automáticamente por la marca del producto
+  useEffect(() => {
+    if (highlightedId) {
+      const product = perfumes.find((p) => p.id === highlightedId);
+      if (product) {
+        setSelectedBrand(product.brand);
+      }
+    }
+  }, [highlightedId]);
 
   const filteredProducts = selectedBrand
     ? perfumes.filter((p) => p.brand === selectedBrand)
@@ -68,7 +99,13 @@ const Perfumes = () => {
             <div className="flex-1">
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 items-stretch">
                 {filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                  <div
+                    key={product.id}
+                    ref={el => (productRefs.current[product.id] = el)}
+                    className={highlightedId === product.id ? "ring-4 ring-blue-400 rounded-lg transition-all" : ""}
+                  >
+                    <ProductCard product={product} />
+                  </div>
                 ))}
               </div>
               {filteredProducts.length === 0 && (
