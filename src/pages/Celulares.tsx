@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
 import { SEO } from "@/components";
@@ -8,6 +9,9 @@ const Celulares = () => {
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
   const [selectedSeries, setSelectedSeries] = useState<string | null>(null);
   const productsSectionRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const [highlightedId, setHighlightedId] = useState<string | null>(null);
+  const productRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   // Scroll a la sección de productos cuando cambia el filtro de serie o marca
   useEffect(() => {
@@ -15,6 +19,43 @@ const Celulares = () => {
       productsSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [selectedSeries, selectedBrand]);
+
+  // Detectar highlight param en la URL
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const highlight = params.get("highlight");
+    if (highlight) {
+      setHighlightedId(highlight);
+      setTimeout(() => {
+        const el = productRefs.current[highlight];
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 300);
+    } else {
+      setHighlightedId(null);
+    }
+  }, [location.search]);
+
+  // Cuando hay un highlight, filtrar automáticamente por la serie/marca del producto
+  useEffect(() => {
+    if (highlightedId) {
+      const product = celulares.find((p) => p.id === highlightedId);
+      if (product) {
+        if (product.brand === "Apple") {
+          // Si es iPhone, filtrar por la serie correspondiente
+          const match = product.name.match(/(?:iPhone|IPHONE)\s+(\d+)/i);
+          if (match) {
+            setSelectedBrand("Apple");
+            setSelectedSeries(match[1]);
+          }
+        } else {
+          setSelectedBrand(product.brand);
+          setSelectedSeries(null);
+        }
+      }
+    }
+  }, [highlightedId]);
 
   // Función para extraer la serie de iPhone del nombre del producto
   const getiPhoneSeries = (name: string): string | null => {
@@ -124,7 +165,13 @@ const Celulares = () => {
               <div className="flex-1">
                 <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 items-stretch">
                   {filteredProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <div
+                      key={product.id}
+                      ref={el => (productRefs.current[product.id] = el)}
+                      className={highlightedId === product.id ? "ring-4 ring-blue-400 rounded-lg transition-all" : ""}
+                    >
+                      <ProductCard product={product} />
+                    </div>
                   ))}
                 </div>
                 {filteredProducts.length === 0 && (
