@@ -13,8 +13,8 @@ interface SEOProps {
 
 const SEO = ({
   title = "MANIA GROUP - Celulares, Pods y Perfumes",
-  description = "Tienda online de celulares, auriculares y perfumes premium. Los mejores productos al mejor precio.",
-  keywords = "celulares, smartphones, pods, auriculares, perfumes, tienda online, mania group",
+  description = "Tienda online de celulares, vapes y perfumes originales. Los mejores productos al mejor precio.",
+  keywords = "celulares, smartphones, pods, vapes, perfumes, tienda online, mania group",
   image = "/images/logos/banner.png",
   url,
   type = "website",
