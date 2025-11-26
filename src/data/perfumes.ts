@@ -592,5 +592,37 @@ export const perfumes: Product[] = [
     category: "perfumes",
     brand: "Jean Paul Gaultier",
   },
+  {
+    id: "perf-chanel-allure-homme-100",
+    name: "ALLURE HOMME EDT 100ML",
+    price: 112.00,
+    image: "/images/perfumes/chanel/allure-homme-edt-100ml.jpg",
+    category: "perfumes",
+    brand: "Chanel",
+  },
+  {
+    id: "perf-chanel-allure-homme-sport-100",
+    name: "ALLURE HOMME SPORT EDT 100ML",
+    price: 120.00,
+    image: "/images/perfumes/chanel/allure-homme-sport-edt-100ml.jpg",
+    category: "perfumes",
+    brand: "Chanel",
+  },
+  {
+    id: "perf-chanel-allure-homme-sport-50",
+    name: "ALLURE HOMME SPORT EDT 50ML",
+    price: 95.00,
+    image: "/images/perfumes/chanel/allure-homme-sport-edt-50ml.jpg",
+    category: "perfumes",
+    brand: "Chanel",
+  },
+  {
+    id: "perf-chanel-bleu-edt-100",
+    name: "BLEU DE CHANEL EDT 100ML",
+    price: 118.50,
+    image: "/images/perfumes/chanel/bleu-de-chanel-edt-100ml.jpg",
+    category: "perfumes",
+    brand: "Chanel",
+  },
 ];
 
