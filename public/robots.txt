@@ -1,11 +1,14 @@
 User-agent: *
 Allow: /
+Disallow: /carrito
 
 User-agent: Googlebot
 Allow: /
+Disallow: /carrito
 
 User-agent: Bingbot
 Allow: /
+Disallow: /carrito
 
 User-agent: Twitterbot
 Allow: /

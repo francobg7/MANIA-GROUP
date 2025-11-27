@@ -67,7 +67,7 @@ const Index = () => {
     "@type": "Organization",
     "name": "MANIA GROUP",
     "url": "https://maniagroup.com.py",
-    "description": "Tienda online de celulares, auriculares y perfumes premium. Los mejores productos al mejor precio.",
+    "description": "Tienda online de celulares, vapes y perfumes premium. Los mejores productos al mejor precio.",
     "sameAs": [
       "https://www.facebook.com/maniagroup",
       "https://www.instagram.com/maniagroup"
@@ -76,16 +76,16 @@ const Index = () => {
       "@type": "AggregateOffer",
       "itemCondition": "https://schema.org/NewCondition",
       "availability": "https://schema.org/InStock",
-      "category": ["Smartphones", "Audio Equipment", "Perfumes"]
+      "category": ["Smartphones", "Vapes", "Perfumes"]
     }
   };
 
   return (
     <>
       <SEO
-        title="MANIA GROUP - Celulares, Pods y Perfumes Premium"
-        description="Descubre la mejor selección de smartphones, auriculares inalámbricos y perfumes de lujo. Productos originales con garantía y envío gratis."
-        keywords="celulares iPhone Samsung, pods auriculares wireless, perfumes originales, tienda online Colombia"
+        title="MANIA GROUP - Celulares, Vapes y Perfumes Premium"
+        description="Descubre la mejor selección de smartphones, vapes y perfumes de lujo. Productos originales con garantía. Con envío a todo Paraguay. Tienda ubicada en Ciudad del Este - Paraguay."
+        keywords="celulares iPhone Samsung, vapes originales, perfumes originales, tienda online Ciudad del Este Paraguay"
         url="/"
         structured_data={organizationSchema}
       />

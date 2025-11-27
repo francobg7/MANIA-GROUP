@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import ProductCard from "@/components/ProductCard";
 import BrandFilter from "@/components/BrandFilter";
+import SEO from "@/components/SEO";
 import { perfumes } from "@/data/perfumes";
 
 const Perfumes = () => {
@@ -49,9 +50,40 @@ const Perfumes = () => {
     ? perfumes.filter((p) => p.brand === selectedBrand)
     : perfumes;
 
+  // Structured data for perfumes
+  const productsSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Perfumes y Fragancias - MANIA GROUP",
+    "description": "Perfumes originales de las mejores marcas. Dior, Chanel, Tom Ford y más.",
+    "mainEntity": filteredProducts.map(product => ({
+      "@type": "Product",
+      "name": product.name,
+      "image": product.image,
+      "offers": {
+        "@type": "Offer",
+        "price": product.price,
+        "priceCurrency": "USD"
+      },
+      "brand": {
+        "@type": "Brand",
+        "name": product.brand
+      },
+      "category": "Perfumes"
+    }))
+  };
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
+    <>
+      <SEO
+        title="Perfumes y Fragancias Originales - MANIA GROUP"
+        description="Perfumes originales de las mejores marcas: Dior Sauvage, Chanel Bleu, Tom Ford y más. Productos auténticos con garantía. Envío a todo Paraguay."
+        keywords="perfumes originales, Dior Sauvage, Chanel Bleu, Tom Ford, fragancias Ciudad del Este Paraguay"
+        url="/perfumes"
+        structured_data={productsSchema}
+      />
+      <div className="min-h-screen">
+        {/* Hero Section */}
       <section className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -118,6 +150,7 @@ const Perfumes = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -15,7 +15,7 @@ const slides = [
     id: 2,
     image: "/images/pods/p1.jpg",
     title: "Novedades en vapes",
-    subtitle: "PODS de la mejor calidad",
+    subtitle: "Vapes de la mejor calidad",
     ctaText: "Vapes",
     ctaLink: "/vapes"
   },

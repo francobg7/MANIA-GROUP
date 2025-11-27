@@ -1,4 +1,4 @@
-import { MapPin, CreditCard, ShieldCheck, Headphones, CheckCircle2 } from "lucide-react";
+import { MapPin, CreditCard, ShieldCheck, MessageCircle, CheckCircle2 } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -22,7 +22,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex items-start md:items-center gap-3 md:gap-4 justify-center md:justify-start">
-              <Headphones className="h-7 w-7" />
+              <MessageCircle className="h-7 w-7" />
               <div>
                 <p className="text-lg font-semibold">Atención personalizada</p>
                 <p className="text-sm text-primary-foreground/70">Consultas por WhatsApp con nuestro equipo.</p>
@@ -45,7 +45,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-primary-foreground/80 text-sm max-w-sm">
-              Tienda especializada en Electrónicos, Celulares y Equipos de Sonido e Imagen.
+              Tienda especializada en Celulares, Vapes y Perfumes Originales.
             </p>
             <div className="mt-4 space-y-1 text-primary-foreground/75 text-sm">
               <p className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Ciudad del Este - PY</p>

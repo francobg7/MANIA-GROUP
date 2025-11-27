@@ -5,6 +5,7 @@ import BrandFilter from "@/components/BrandFilter";
 import VapeDisclaimer from "@/components/VapeDisclaimer";
 import AgeVerificationModal from "@/components/AgeVerificationModal";
 import Pagination from "@/components/Pagination";
+import SEO from "@/components/SEO";
 import { pods } from "@/data/pods";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PodsSubdivisionFilter from "@/components/PodsSubdivisionFilter";
@@ -214,9 +215,40 @@ const Vapes = () => {
     );
   }
 
+  // Structured data for vapes
+  const productsSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Vapes y Dispositivos de Vapeo - MANIA GROUP",
+    "description": "Vapes de las mejores marcas: Elfbar, Lost Mary, Ignite y más. Dispositivos de vapeo de calidad.",
+    "mainEntity": currentPageProducts.map(product => ({
+      "@type": "Product", 
+      "name": product.name,
+      "image": product.image,
+      "offers": {
+        "@type": "Offer",
+        "price": product.price,
+        "priceCurrency": "USD"
+      },
+      "brand": {
+        "@type": "Brand",
+        "name": product.brand
+      },
+      "category": "Vapes"
+    }))
+  };
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
+    <>
+      <SEO
+        title="Vapes y Dispositivos de Vapeo - MANIA GROUP"
+        description="Los mejores vapes y dispositivos de vapeo: Elfbar, Lost Mary, Ignite, Geek Bar y más. Productos de calidad con envío a todo Paraguay. Tienda en Ciudad del Este."
+        keywords="vapes, elfbar, lost mary, ignite, geek bar, dispositivos vapeo Ciudad del Este Paraguay"
+        url="/vapes"
+        structured_data={productsSchema}
+      />
+      <div className="min-h-screen">
+        {/* Hero Section */}
       <section className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -304,6 +336,7 @@ const Vapes = () => {
       {/* Disclaimer Section */}
       <VapeDisclaimer />
     </div>
+    </>
   );
 };
 

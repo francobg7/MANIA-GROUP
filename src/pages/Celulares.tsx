@@ -105,8 +105,8 @@ const Celulares = () => {
     <>
       <SEO
         title="Celulares y Smartphones - MANIA GROUP"
-        description="Encuentra los mejores celulares iPhone, Samsung, Xiaomi y más. Productos originales con garantía. Envío gratis a toda Colombia."
-        keywords="celulares iPhone, Samsung Galaxy, Xiaomi smartphones, celulares originales Colombia"
+        description="Encuentra los mejores celulares iPhone, Samsung, Xiaomi y más. Productos originales con garantía. Con envío a todo Paraguay. Tienda ubicada en Ciudad del Este - Paraguay."
+        keywords="celulares iPhone, Samsung Galaxy, Xiaomi smartphones, celulares originales Ciudad del Este Paraguay"
         url="/celulares"
         structured_data={productsSchema}
       />

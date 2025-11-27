@@ -5,6 +5,7 @@ import { useCart } from "@/contexts/CartContext";
 import { formatUSD } from "@/lib/utils";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const Carrito = () => {
   const { cart, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
@@ -29,25 +30,40 @@ const Carrito = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <ShoppingBag className="mx-auto h-24 w-24 text-muted-foreground mb-4" />
-          <h2 className="text-3xl font-bold mb-2">Tu carrito está vacío</h2>
-          <p className="text-muted-foreground mb-6">
-            Agrega productos para comenzar tu compra
-          </p>
-          <Link to="/">
-            <Button size="lg">Ir a la tienda</Button>
-          </Link>
+      <>
+        <SEO
+          title="Carrito de Compras - MANIA GROUP"
+          description="Tu carrito de compras en MANIA GROUP"
+          robots="noindex,nofollow"
+          url="/carrito"
+        />
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <ShoppingBag className="mx-auto h-24 w-24 text-muted-foreground mb-4" />
+            <h2 className="text-3xl font-bold mb-2">Tu carrito está vacío</h2>
+            <p className="text-muted-foreground mb-6">
+              Agrega productos para comenzar tu compra
+            </p>
+            <Link to="/">
+              <Button size="lg">Ir a la tienda</Button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen py-12">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="flex items-center justify-between mb-8">
+    <>
+      <SEO
+        title="Carrito de Compras - MANIA GROUP"
+        description="Tu carrito de compras en MANIA GROUP"
+        robots="noindex,nofollow"
+        url="/carrito"
+      />
+      <div className="min-h-screen py-12">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="flex items-center justify-between mb-8">
           <h1 className="text-4xl font-bold">Carrito de Compras</h1>
           <Button variant="outline" onClick={clearCart}>
             Vaciar carrito
@@ -126,6 +142,7 @@ const Carrito = () => {
         </Card>
       </div>
     </div>
+    </>
   );
 };
 

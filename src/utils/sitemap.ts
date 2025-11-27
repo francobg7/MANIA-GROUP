@@ -7,8 +7,8 @@ export const generateSitemap = () => {
     { url: "/", priority: "1.0", changefreq: "daily" },
     { url: "/celulares", priority: "0.9", changefreq: "weekly" },
     { url: "/vapes", priority: "0.9", changefreq: "weekly" },
-    { url: "/perfumes", priority: "0.9", changefreq: "weekly" },
-    { url: "/carrito", priority: "0.3", changefreq: "monthly" }
+    { url: "/perfumes", priority: "0.9", changefreq: "weekly" }
+    // Carrito excluido del sitemap para SEO
   ];
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
