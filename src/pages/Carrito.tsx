@@ -6,9 +6,14 @@ import { formatUSD } from "@/lib/utils";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
+import { useEffect } from "react";
 
 const Carrito = () => {
   const { cart, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [cart.length]);
 
   const handleWhatsAppOrder = () => {
     if (cart.length === 0) return;
