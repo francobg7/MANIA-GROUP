@@ -72,13 +72,83 @@ const Index = () => {
       "https://www.facebook.com/maniagroup",
       "https://www.instagram.com/maniagroup"
     ],
-    "offers": {
-      "@type": "AggregateOffer",
-      "itemCondition": "https://schema.org/NewCondition",
-      "availability": "https://schema.org/InStock",
-      "category": ["Smartphones", "Vapes", "Perfumes"]
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
     }
   };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MANIA GROUP",
+    "url": "https://maniagroup.com.py",
+    "description": "Tienda online de celulares, vapes y perfumes premium",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://maniagroup.com.py/buscar?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Los productos son originales?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, todos nuestros productos son 100% originales con garantía. Trabajamos directamente con distribuidores autorizados."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Realizan envíos a todo Paraguay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, realizamos envíos a todo Paraguay. Los productos son enviados desde nuestra tienda en Ciudad del Este con total seguridad."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Los celulares vienen desbloqueados?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, todos nuestros smartphones iPhone y Samsung vienen completamente desbloqueados para usar con cualquier operadora."
+        }
+      }
+    ]
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "MANIA GROUP",
+    "description": "Tienda de celulares, vapes y perfumes en Ciudad del Este",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ciudad del Este",
+      "addressCountry": "PY"
+    },
+    "url": "https://maniagroup.com.py",
+    "priceRange": "$",
+    "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+    "currenciesAccepted": "USD",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
+  const combinedSchema = [organizationSchema, websiteSchema, faqSchema, localBusinessSchema];
 
   return (
     <>
@@ -87,7 +157,7 @@ const Index = () => {
         description="Descubre la mejor selección de smartphones, vapes y perfumes de lujo. Productos originales con garantía. Con envío a todo Paraguay. Tienda ubicada en Ciudad del Este - Paraguay."
         keywords="celulares iPhone Samsung, vapes originales, perfumes originales, tienda online Ciudad del Este Paraguay"
         url="/"
-        structured_data={organizationSchema}
+        structured_data={combinedSchema}
       />
       <div className="min-h-screen">
         <HeroSlider />

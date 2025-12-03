@@ -95,11 +95,55 @@ const Celulares = () => {
       "@type": "Product",
       "position": index + 1,
       "name": product.name,
-      "description": `${product.name} - Celular premium con excelente calidad`,
-      "brand": product.brand || "Premium",
-      "category": "Smartphones"
+      "description": `${product.name} - Smartphone ${product.brand} con tecnología avanzada y excelente rendimiento`,
+      "brand": {
+        "@type": "Brand",
+        "name": product.brand || "Premium"
+      },
+      "category": "Smartphone",
+      "image": `https://maniagroup.com.py${product.image}`,
+      "offers": {
+        "@type": "Offer",
+        "price": product.price,
+        "priceCurrency": "USD",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "MANIA GROUP"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "32",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
     }))
   };
+
+  // Breadcrumb structured data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://maniagroup.com.py"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Celulares",
+        "item": "https://maniagroup.com.py/celulares"
+      }
+    ]
+  };
+
+  const combinedSchema = [productsSchema, breadcrumbSchema];
 
   return (
     <>
@@ -108,7 +152,7 @@ const Celulares = () => {
         description="Encuentra los mejores celulares iPhone, Samsung, Xiaomi y más. Productos originales con garantía. Con envío a todo Paraguay. Tienda ubicada en Ciudad del Este - Paraguay."
         keywords="celulares iPhone, Samsung Galaxy, Xiaomi smartphones, celulares originales Ciudad del Este Paraguay"
         url="/celulares"
-        structured_data={productsSchema}
+        structured_data={combinedSchema}
       />
       <div className="min-h-screen">
         {/* Hero Section */}

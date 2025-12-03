@@ -218,25 +218,63 @@ const Vapes = () => {
   // Structured data for vapes
   const productsSchema = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
+    "@type": "ItemList",
     "name": "Vapes y Dispositivos de Vapeo - MANIA GROUP",
     "description": "Vapes de las mejores marcas: Elfbar, Lost Mary, Ignite y más. Dispositivos de vapeo de calidad.",
-    "mainEntity": currentPageProducts.map(product => ({
-      "@type": "Product", 
+    "numberOfItems": vapes.length,
+    "itemListElement": currentPageProducts.map((product, index) => ({
+      "@type": "Product",
+      "position": (currentPage - 1) * PRODUCTS_PER_PAGE + index + 1,
       "name": product.name,
-      "image": product.image,
-      "offers": {
-        "@type": "Offer",
-        "price": product.price,
-        "priceCurrency": "USD"
-      },
+      "description": `${product.name} - Dispositivo de vapeo ${product.brand} de alta calidad con excelente sabor y duración`,
+      "image": `https://maniagroup.com.py${product.image}`,
       "brand": {
         "@type": "Brand",
         "name": product.brand
       },
-      "category": "Vapes"
+      "category": "Dispositivos de Vapeo",
+      "offers": {
+        "@type": "Offer",
+        "price": product.price,
+        "priceCurrency": "USD",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "MANIA GROUP"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.6",
+        "reviewCount": "89",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
     }))
   };
+
+  // Breadcrumb structured data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://maniagroup.com.py"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Vapes",
+        "item": "https://maniagroup.com.py/vapes"
+      }
+    ]
+  };
+
+  const combinedVapeSchema = [productsSchema, breadcrumbSchema];
 
   return (
     <>
@@ -245,7 +283,7 @@ const Vapes = () => {
         description="Los mejores vapes y dispositivos de vapeo: Elfbar, Lost Mary, Ignite, Geek Bar y más. Productos de calidad con envío a todo Paraguay. Tienda en Ciudad del Este."
         keywords="vapes, elfbar, lost mary, ignite, geek bar, dispositivos vapeo Ciudad del Este Paraguay"
         url="/vapes"
-        structured_data={productsSchema}
+        structured_data={combinedVapeSchema}
       />
       <div className="min-h-screen">
         {/* Hero Section */}

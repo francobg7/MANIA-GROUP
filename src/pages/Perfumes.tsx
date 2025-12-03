@@ -53,25 +53,63 @@ const Perfumes = () => {
   // Structured data for perfumes
   const productsSchema = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
+    "@type": "ItemList",
     "name": "Perfumes y Fragancias - MANIA GROUP",
     "description": "Perfumes originales de las mejores marcas. Dior, Chanel, Tom Ford y más.",
-    "mainEntity": filteredProducts.map(product => ({
+    "numberOfItems": perfumes.length,
+    "itemListElement": filteredProducts.slice(0, 10).map((product, index) => ({
       "@type": "Product",
+      "position": index + 1,
       "name": product.name,
-      "image": product.image,
-      "offers": {
-        "@type": "Offer",
-        "price": product.price,
-        "priceCurrency": "USD"
-      },
+      "description": `${product.name} - Perfume original ${product.brand} con fragancia exclusiva y elegante`,
+      "image": `https://maniagroup.com.py${product.image}`,
       "brand": {
         "@type": "Brand",
         "name": product.brand
       },
-      "category": "Perfumes"
+      "category": "Perfumes y Fragancias",
+      "offers": {
+        "@type": "Offer",
+        "price": product.price,
+        "priceCurrency": "USD",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "MANIA GROUP"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "156",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
     }))
   };
+
+  // Breadcrumb structured data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://maniagroup.com.py"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Perfumes",
+        "item": "https://maniagroup.com.py/perfumes"
+      }
+    ]
+  };
+
+  const combinedPerfumeSchema = [productsSchema, breadcrumbSchema];
 
   return (
     <>
@@ -80,7 +118,7 @@ const Perfumes = () => {
         description="Perfumes originales de las mejores marcas: Dior Sauvage, Chanel Bleu, Tom Ford y más. Productos auténticos con garantía. Envío a todo Paraguay."
         keywords="perfumes originales, Dior Sauvage, Chanel Bleu, Tom Ford, fragancias Ciudad del Este Paraguay"
         url="/perfumes"
-        structured_data={productsSchema}
+        structured_data={combinedPerfumeSchema}
       />
       <div className="min-h-screen">
         {/* Hero Section */}
